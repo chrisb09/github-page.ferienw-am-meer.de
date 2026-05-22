@@ -43,8 +43,8 @@ const activities = [
   {
     title: "Wellness",
     items: [
-      { text: "Unten im Haus bietet die „Wellness-Oase" ein vielfältiges Verwöhnprogramm", href: "http://www.das-health-care-studio-mit-herz.de/index.php" },
-      { text: "Wellness-Welt „Wellness am Meer" angeschlossen ans Wellenbad", href: "http://www.wellness-am-meer.de/" },
+      { text: 'Unten im Haus bietet die \u201eWellness-Oase\u201c ein vielfältiges Verwöhnprogramm', href: "http://www.das-health-care-studio-mit-herz.de/index.php" },
+      { text: 'Wellness-Welt \u201eWellness am Meer\u201c angeschlossen ans Wellenbad', href: "http://www.wellness-am-meer.de/" },
     ],
   },
   {
