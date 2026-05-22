@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { Train, Car } from "lucide-react";
 
@@ -21,19 +20,21 @@ export default function AnreisePage() {
         <p className="text-muted-foreground mb-8">So finden Sie uns in Bad Zwischenahn</p>
       </section>
 
-      {/* Map image */}
+      {/* Map */}
       <section className="max-w-5xl mx-auto px-4 sm:px-6 pb-10">
-        <div className="relative aspect-[16/7] rounded overflow-hidden shadow-md">
-          <Image
-            src="/Anreise_files/011.jpg"
-            alt="Karte Bad Zwischenahn mit Lage der Ferienwohnungen Am Meer"
-            fill
-            className="object-cover"
-            priority
+        <div className="rounded overflow-hidden shadow-md border border-border" style={{ height: "420px" }}>
+          <iframe
+            title="Karte: Ferienwohnungen Am Meer, Am Delf 37, 26160 Bad Zwischenahn"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=8.001%2C53.191%2C8.009%2C53.195&layer=mapnik&marker=53.193%2C8.005"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            loading="lazy"
+            allowFullScreen
           />
         </div>
         <p className="text-xs text-muted-foreground text-center mt-2">
-          Copyright: Kurverwaltung Bad Zwischenahn
+          Karte: <a href="https://www.openstreetmap.org/?mlat=53.193&mlon=8.005#map=16/53.193/8.005" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">OpenStreetMap</a> &middot; Lizenz: <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">ODbL</a>
         </p>
       </section>
 

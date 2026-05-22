@@ -40,13 +40,13 @@ export default function Fewo105Page() {
       <section className="max-w-5xl mx-auto px-4 sm:px-6 pb-12">
         <div className="grid md:grid-cols-2 gap-8 items-start">
           {/* Floor plan */}
-          <div className="relative aspect-[4/5] rounded overflow-hidden shadow-md bg-white flex items-center justify-center">
+          <div className="rounded overflow-hidden shadow-md bg-white p-4 flex items-center justify-center">
             <Image
               src="/images/105/grundriss.svg"
               alt="Grundriss Ferienwohnung 105"
-              width={284}
-              height={464}
-              className="max-h-full w-auto"
+              width={300}
+              height={400}
+              className="w-full max-w-sm h-auto"
               priority
             />
           </div>
