@@ -25,16 +25,17 @@ export default function AnreisePage() {
         <div className="rounded overflow-hidden shadow-md border border-border" style={{ height: "420px" }}>
           <iframe
             title="Karte: Ferienwohnungen Am Meer, Am Delf 37, 26160 Bad Zwischenahn"
-            src="https://www.openstreetmap.org/export/embed.html?bbox=8.001%2C53.191%2C8.009%2C53.195&layer=mapnik&marker=53.193%2C8.005"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=8.0%2C53.19%2C8.01%2C53.198&layer=mapnik&marker=53.193%2C8.005"
             width="100%"
             height="100%"
             style={{ border: 0 }}
             loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
             allowFullScreen
           />
         </div>
         <p className="text-xs text-muted-foreground text-center mt-2">
-          Karte: <a href="https://www.openstreetmap.org/?mlat=53.193&mlon=8.005#map=16/53.193/8.005" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">OpenStreetMap</a> &middot; Lizenz: <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">ODbL</a>
+          Karte: © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">OpenStreetMap-Mitwirkende</a>
         </p>
       </section>
 
