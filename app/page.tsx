@@ -8,7 +8,7 @@ export default function WillkommenPage() {
       {/* Hero */}
       <section className="relative h-[60vh] min-h-[400px] bg-foreground overflow-hidden">
         <Image
-          src="/Willkommen_files/shapeimage_2.jpg"
+          src="/images/titelbild.png"
           alt="Blick auf die Wohnanlage Am Delf am Zwischenahner Meer"
           fill
           className="object-cover opacity-80"
@@ -46,7 +46,7 @@ export default function WillkommenPage() {
           </div>
           <div className="relative aspect-[4/3] rounded overflow-hidden shadow-md">
             <Image
-              src="/Willkommen_files/04.jpg"
+              src="/images/lake-view-01.png"
               alt="Segelboote am Zwischenahner Meer"
               fill
               className="object-cover"
@@ -120,7 +120,6 @@ export default function WillkommenPage() {
                 size: "70 qm",
                 detail:
                   "Wohnzimmer mit Kochnische, Schlafzimmer, Duschbad, 18 qm Loggia zum See",
-                stars: "4 Sterne",
               },
               {
                 href: "/fewo-105",
@@ -128,7 +127,6 @@ export default function WillkommenPage() {
                 size: "50 qm",
                 detail:
                   "Wohnzimmer mit Küchenzeile, Schlafzimmer, Dusche, überdachter Balkon",
-                stars: "4 Sterne",
               },
             ].map((apt) => (
               <Link
@@ -141,7 +139,7 @@ export default function WillkommenPage() {
                     <h3 className="font-serif text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
                       {apt.name}
                     </h3>
-                    <p className="text-sm text-accent font-medium mt-0.5">{apt.stars} &middot; Nichtraucher &middot; Allergiefreundlich</p>
+                    <p className="text-sm text-accent font-medium mt-0.5">Nichtraucher &middot; Allergiefreundlich</p>
                   </div>
                   <span className="text-sm text-muted-foreground font-mono">{apt.size}</span>
                 </div>
@@ -159,7 +157,7 @@ export default function WillkommenPage() {
       <section className="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-16">
         <div className="relative aspect-[16/7] rounded overflow-hidden shadow-md">
           <Image
-            src="/Willkommen_files/006.jpg"
+            src="/images/lake-view-02.png"
             alt="Luftbild Bad Zwischenahn mit Wohnanlage am See"
             fill
             className="object-cover"

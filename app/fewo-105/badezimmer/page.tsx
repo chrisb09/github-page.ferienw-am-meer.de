@@ -23,8 +23,7 @@ export default function Badezimmer105Page() {
         </>
       }
       images={[
-        { src: "/Badezimmer_105_files/14-filtered.jpg", alt: "Badezimmer Ferienwohnung 105 mit Dusche" },
-        { src: "/Badezimmer_105_files/15-filtered.jpg", alt: "Badezimmer Ferienwohnung 105 – Detail" },
+        { src: "/images/105/badezimmer-01.jpg", alt: "Badezimmer Ferienwohnung 105 mit Dusche" },
       ]}
     />
   );
