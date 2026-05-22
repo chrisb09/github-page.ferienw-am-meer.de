@@ -5,7 +5,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Ferienwohnung 105 – Am Meer Bad Zwischenahn",
   description:
-    "50 qm Ferienwohnung 105 mit überdachtem Balkon, 4-Sterne-Klassifizierung, direkt am Zwischenahner Meer.",
+    "50 qm Ferienwohnung 105 mit überdachtem Balkon, direkt am Zwischenahner Meer. Nichtraucher, allergiefreundlich.",
 };
 
 const rooms = [
@@ -31,7 +31,6 @@ export default function Fewo105Page() {
           <h1 className="font-serif text-3xl sm:text-4xl font-bold text-foreground">
             Wohnung 105
           </h1>
-          <span className="text-accent font-medium text-sm">4 Sterne</span>
         </div>
         <p className="text-muted-foreground text-sm mb-8">
           Nichtraucher &middot; Allergiefreundlich &middot; 50 qm &middot; 4. Etage mit Fahrstuhl
@@ -40,13 +39,14 @@ export default function Fewo105Page() {
 
       <section className="max-w-5xl mx-auto px-4 sm:px-6 pb-12">
         <div className="grid md:grid-cols-2 gap-8 items-start">
-          {/* Image */}
-          <div className="relative aspect-[4/5] rounded overflow-hidden shadow-md">
+          {/* Floor plan */}
+          <div className="relative aspect-[4/5] rounded overflow-hidden shadow-md bg-white flex items-center justify-center">
             <Image
-              src="/Fewo_105_files/shapeimage_8.jpg"
-              alt="Grundriss und Ansicht Ferienwohnung 105"
-              fill
-              className="object-cover"
+              src="/images/105/grundriss.svg"
+              alt="Grundriss Ferienwohnung 105"
+              width={284}
+              height={464}
+              className="max-h-full w-auto"
               priority
             />
           </div>

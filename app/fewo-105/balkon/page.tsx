@@ -29,8 +29,8 @@ export default function Balkon105Page() {
         </>
       }
       images={[
-        { src: "/Balkon_105_files/19.jpg", alt: "Balkon Ferienwohnung 105 – Seeblick" },
-        { src: "/Balkon_105_files/16.jpg", alt: "Balkon Ferienwohnung 105 – Sitzbereich" },
+        { src: "/images/105/balkon-01.webp", alt: "Balkon Ferienwohnung 105 – Seeblick mit Segelboot" },
+        { src: "/images/105/balkon-02.webp", alt: "Balkon Ferienwohnung 105 – Sitzbereich mit Tee" },
       ]}
     />
   );

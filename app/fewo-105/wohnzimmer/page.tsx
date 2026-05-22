@@ -33,8 +33,9 @@ export default function Wohnzimmer105Page() {
         </>
       }
       images={[
-        { src: "/Wohnzimmer_105_files/DSC_960406.jpg", alt: "Wohnzimmer Ferienwohnung 105 – Sitzbereich" },
-        { src: "/Wohnzimmer_105_files/_DSC9004.jpg", alt: "Wohnzimmer Ferienwohnung 105 – Küche" },
+        { src: "/images/105/wohnzimmer-02.jpg", alt: "Wohnzimmer Ferienwohnung 105 – Sitzbereich mit Seeblick" },
+        { src: "/images/105/wohnzimmer-01.jpg", alt: "Wohnzimmer Ferienwohnung 105 – Eingangsbereich mit Bar" },
+        { src: "/images/105/wohnzimmer-03.jpg", alt: "Wohnzimmer Ferienwohnung 105 – Küche und Essbereich" },
       ]}
     />
   );
