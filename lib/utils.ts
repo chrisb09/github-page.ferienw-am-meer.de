@@ -1,18 +1,9 @@
 /**
  * Dynamically determines the base path for the application.
- * Matches the logic in next.config.ts
+ * Uses the environment variable injected at build time.
  */
 export function getBasePath() {
-  const isGithubActions = process.env.GITHUB_ACTIONS === "true";
-  
-  // If we're on GitHub Actions, use the repository name
-  if (isGithubActions) {
-    return "/github-page.ferienw-am-meer.de";
-  }
-  
-  // Otherwise, use the preview path (or empty for local dev if desired)
-  // For now, keeping it consistent with your private server requirement
-  return "/ferienw-preview";
+  return process.env.NEXT_PUBLIC_BASE_PATH || "";
 }
 
 /**
@@ -20,11 +11,12 @@ export function getBasePath() {
  * Ensures the path starts with a leading slash and doesn't double-prefix.
  */
 export function resolveAssetPath(path: string) {
-  if (!path.startsWith("/")) return path;
+  if (!path || !path.startsWith("/")) return path;
   
   const basePath = getBasePath();
   
-  if (path.startsWith(basePath)) return path;
+  // If the path already includes the basePath, don't add it again
+  if (basePath && path.startsWith(basePath)) return path;
   
   return `${basePath}${path}`;
 }

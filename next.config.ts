@@ -1,6 +1,5 @@
 import type { NextConfig } from "next";
 
-// This logic must match lib/utils.ts
 const isGithubActions = process.env.GITHUB_ACTIONS === "true";
 const basePath = isGithubActions ? '/github-page.ferienw-am-meer.de' : '/ferienw-preview';
 
@@ -12,6 +11,9 @@ const nextConfig: NextConfig = {
   trailingSlash: true,
   images: {
     unoptimized: true,
+  },
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
   },
   allowedDevOrigins: ["127.0.0.1"],
 };
