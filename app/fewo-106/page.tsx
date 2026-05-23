@@ -20,7 +20,7 @@ export default function Fewo106Page() {
       apartment={106}
       title="Wohnung 106"
       subtitle="Nichtraucher · Allergiefreundlich · 70 qm · 4. Etage mit Fahrstuhl"
-      floorPlanSrc="/images/106/wohnzimmer-01.png"
+      floorPlanSrc="/images/106/wohnzimmer-01.webp"
       floorPlanAlt="Wohnzimmer Wohnung 106"
       rooms={rooms}
       otherAptHref="/fewo-105"

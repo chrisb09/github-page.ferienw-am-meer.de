@@ -28,7 +28,7 @@ export default function Schlafzimmer106Page() {
         </>
       }
       images={[
-        { src: "/images/106/schlafzimmer.png", alt: "Schlafzimmer Ferienwohnung 106 – Doppelbett mit Seeblick" },
+        { src: "/images/106/schlafzimmer.webp", alt: "Schlafzimmer Ferienwohnung 106 – Doppelbett mit Seeblick" },
       ]}
     />
   );
