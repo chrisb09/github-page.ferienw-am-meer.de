@@ -29,7 +29,7 @@ export default function Schlafzimmer105Page() {
         </>
       }
       images={[
-        { src: "/images/105/schlafzimmer-01.jpg", alt: "Schlafzimmer Ferienwohnung 105 – Doppelbett mit Seeblick" },
+        { src: "/images/105/schlafzimmer.png", alt: "Schlafzimmer Ferienwohnung 105 – Doppelbett mit Seeblick" },
       ]}
     />
   );

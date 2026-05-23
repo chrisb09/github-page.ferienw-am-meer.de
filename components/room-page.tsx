@@ -68,7 +68,7 @@ export function RoomPage({ apartment, roomSlug, roomLabel, description, images }
               onClick={() => openModal(0)}
             >
               <Image
-                src={images[0].src}
+                src={images[0].src.startsWith('/') ? `/ferienw-preview${images[0].src}` : images[0].src}
                 alt={images[0].alt}
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -92,8 +92,8 @@ export function RoomPage({ apartment, roomSlug, roomLabel, description, images }
                 className="relative aspect-[4/3] rounded overflow-hidden shadow-sm cursor-zoom-in group"
                 onClick={() => openModal(i + 1)}
               >
-                <Image
-                  src={img.src}
+                  <Image
+                  src={img.src.startsWith('/') ? `/ferienw-preview${img.src}` : img.src}
                   alt={img.alt}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"

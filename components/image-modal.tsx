@@ -90,7 +90,7 @@ export function ImageModal({
       >
         <div className="relative w-full h-full">
           <Image
-            src={images[currentIndex].src}
+            src={images[currentIndex].src.startsWith('/') ? `/ferienw-preview${images[currentIndex].src}` : images[currentIndex].src}
             alt={images[currentIndex].alt}
             fill
             className="object-contain"

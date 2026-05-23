@@ -8,7 +8,7 @@ export default function WillkommenPage() {
       {/* Hero */}
       <section className="relative h-[60vh] min-h-[400px] bg-foreground overflow-hidden">
         <Image
-          src="/images/titelbild.png"
+          src="/ferienw-preview/images/titelbild.png"
           alt="Blick auf die Wohnanlage Am Delf am Zwischenahner Meer"
           fill
           className="object-cover opacity-80"
@@ -46,7 +46,7 @@ export default function WillkommenPage() {
           </div>
           <div className="relative aspect-[4/3] rounded overflow-hidden shadow-md">
             <Image
-              src="/images/lake-view-01.png"
+              src="/ferienw-preview/images/lake-view-01.png"
               alt="Segelboote am Zwischenahner Meer"
               fill
               className="object-cover"
@@ -157,7 +157,7 @@ export default function WillkommenPage() {
       <section className="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-16">
         <div className="relative aspect-[16/7] rounded overflow-hidden shadow-md">
           <Image
-            src="/images/lake-view-02.png"
+            src="/ferienw-preview/images/lake-view-02.png"
             alt="Luftbild Bad Zwischenahn mit Wohnanlage am See"
             fill
             className="object-cover"
