@@ -54,9 +54,27 @@ const activities = [
     ],
   },
   {
-    title: "Park der Gärten",
+    title: "Gastronomie",
     items: [
-      { text: "Nachfolge der Niedersächsischen Landesgartenschau 2002", href: "http://www.park-der-gaerten.de/index.html" },
+      { text: "Traditionelle Spezialitäten: Ammerländer Schinken und Smoortaal" },
+      { text: "Gemütliche Cafés und erstklassige Restaurants im Ortskern und am See" },
+      { text: "Tipp: Besuch einer der historischen Schinkenräuchereien" },
+    ],
+  },
+  {
+    title: "Einkaufen",
+    items: [
+      { text: "Die Flaniermeile im Ortskern lädt zum Bummeln ein" },
+      { text: "Zahlreiche Fachgeschäfte und Boutiquen" },
+      { text: "Saisonale Sonntagsöffnungen der Geschäfte" },
+    ],
+  },
+  {
+    title: "Kultur",
+    items: [
+      { text: "Das Freilichtmuseum im Ort", href: "https://www.freilichtmuseum-zwischenahn.de/" },
+      { text: "Der Kurpark im Ort" },
+      { text: "Park der Gärten – Nachfolge der Niedersächsischen Landesgartenschau 2002", href: "http://www.park-der-gaerten.de/index.html" },
     ],
   },
   {
@@ -77,9 +95,6 @@ const activities = [
     items: [
       { text: "Im Mai und Juni ist das gesamte Ammerland ein Blütenmeer – besonders schön: Bruns Baumschulen Rhododendronpark und Rhododendronpark in Linswege" },
       { text: "Das Engelsmeer – eine Moorlandschaft" },
-      { text: "Das Freilichtmuseum im Ort" },
-      { text: "Der Kurpark im Ort" },
-      { text: "Auch im Winter zeigt Bad Zwischenahn seine schönen Seiten" },
     ],
   },
 ];
@@ -88,11 +103,6 @@ export default function FreizeitPage() {
   return (
     <>
       <section className="max-w-5xl mx-auto px-4 sm:px-6 pt-10 pb-4">
-        <nav className="text-sm text-muted-foreground mb-6" aria-label="Breadcrumb">
-          <Link href="/" className="hover:text-foreground transition-colors">Willkommen</Link>
-          <span className="mx-2">/</span>
-          <span className="text-foreground">Freizeit</span>
-        </nav>
         <h1 className="font-serif text-3xl sm:text-4xl font-bold text-foreground mb-2">Freizeit</h1>
         <p className="text-muted-foreground mb-10">
           Aktivitäten und Ausflugsziele rund um Bad Zwischenahn

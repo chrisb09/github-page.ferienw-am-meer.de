@@ -19,14 +19,6 @@ export default function Fewo105Page() {
   return (
     <>
       <section className="max-w-5xl mx-auto px-4 sm:px-6 pt-10 pb-4">
-        <nav className="text-sm text-muted-foreground mb-6" aria-label="Breadcrumb">
-          <Link href="/" className="hover:text-foreground transition-colors">
-            Willkommen
-          </Link>
-          <span className="mx-2">/</span>
-          <span className="text-foreground">Fewo 105</span>
-        </nav>
-
         <div className="flex flex-wrap items-baseline gap-3 mb-2">
           <h1 className="font-serif text-3xl sm:text-4xl font-bold text-foreground">
             Wohnung 105
@@ -40,13 +32,13 @@ export default function Fewo105Page() {
       <section className="max-w-5xl mx-auto px-4 sm:px-6 pb-12">
         <div className="grid md:grid-cols-2 gap-8 items-start">
           {/* Floor plan */}
-          <div className="rounded overflow-hidden shadow-md bg-white p-4 flex items-center justify-center">
+          <div className="flex items-center justify-center">
             <Image
               src="/images/105/grundriss.svg"
               alt="Grundriss Ferienwohnung 105"
-              width={300}
-              height={400}
-              className="w-full max-w-sm h-auto"
+              width={260}
+              height={340}
+              className="w-full max-w-[260px] h-auto mix-blend-multiply"
               priority
             />
           </div>

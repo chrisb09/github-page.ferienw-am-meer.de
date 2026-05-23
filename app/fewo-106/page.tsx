@@ -5,7 +5,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Ferienwohnung 106 – Am Meer Bad Zwischenahn",
   description:
-    "70 qm Ferienwohnung 106 mit 18 qm Loggia, 4-Sterne-Klassifizierung, direkt am Zwischenahner Meer.",
+    "70 qm Ferienwohnung 106 mit 18 qm Loggia, direkt am Zwischenahner Meer.",
 };
 
 const rooms = [
@@ -19,19 +19,10 @@ export default function Fewo106Page() {
   return (
     <>
       <section className="max-w-5xl mx-auto px-4 sm:px-6 pt-10 pb-4">
-        <nav className="text-sm text-muted-foreground mb-6" aria-label="Breadcrumb">
-          <Link href="/" className="hover:text-foreground transition-colors">
-            Willkommen
-          </Link>
-          <span className="mx-2">/</span>
-          <span className="text-foreground">Fewo 106</span>
-        </nav>
-
         <div className="flex flex-wrap items-baseline gap-3 mb-2">
           <h1 className="font-serif text-3xl sm:text-4xl font-bold text-foreground">
             Wohnung 106
           </h1>
-          <span className="text-accent font-medium text-sm">4 Sterne</span>
         </div>
         <p className="text-muted-foreground text-sm mb-8">
           Nichtraucher &middot; Allergiefreundlich &middot; 70 qm &middot; 4. Etage mit Fahrstuhl
@@ -41,12 +32,13 @@ export default function Fewo106Page() {
       <section className="max-w-5xl mx-auto px-4 sm:px-6 pb-12">
         <div className="grid md:grid-cols-2 gap-8 items-start">
           {/* Image */}
-          <div className="relative aspect-[4/3] rounded overflow-hidden shadow-md">
+          <div className="flex items-center justify-center">
             <Image
               src="/Fewo_106_files/shapeimage_4.jpg"
               alt="Grundriss und Ansicht Ferienwohnung 106"
-              fill
-              className="object-cover"
+              width={260}
+              height={340}
+              className="w-full max-w-[260px] h-auto mix-blend-multiply"
               priority
             />
           </div>

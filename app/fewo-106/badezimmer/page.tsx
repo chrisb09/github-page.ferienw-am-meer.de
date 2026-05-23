@@ -23,7 +23,7 @@ export default function Badezimmer106Page() {
         </>
       }
       images={[
-        { src: "/Badezimmer_106_files/P2200077-filtered.jpg", alt: "Badezimmer Ferienwohnung 106 mit Dusche" },
+        { src: "/images/106/badezimmer.png", alt: "Badezimmer Ferienwohnung 106 mit Dusche" },
       ]}
     />
   );

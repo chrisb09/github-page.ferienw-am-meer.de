@@ -33,9 +33,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="de" className={`${inter.variable} ${playfair.variable} bg-background`}>
-      <body className="font-sans antialiased min-h-screen flex flex-col">
-        <Header />
+    <html lang="de" className={`${inter.variable} ${playfair.variable} bg-background`} suppressHydrationWarning>
+      <body className="font-sans antialiased min-h-screen flex flex-col">        <Header />
         <main className="flex-1">{children}</main>
         <Footer />
       </body>

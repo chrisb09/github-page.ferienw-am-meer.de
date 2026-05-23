@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { Phone, Mail, MapPin, ExternalLink } from "lucide-react";
 
@@ -13,11 +12,6 @@ export default function KontaktPage() {
   return (
     <>
       <section className="max-w-5xl mx-auto px-4 sm:px-6 pt-10 pb-4">
-        <nav className="text-sm text-muted-foreground mb-6" aria-label="Breadcrumb">
-          <Link href="/" className="hover:text-foreground transition-colors">Willkommen</Link>
-          <span className="mx-2">/</span>
-          <span className="text-foreground">Kontakt &amp; Preise</span>
-        </nav>
         <h1 className="font-serif text-3xl sm:text-4xl font-bold text-foreground mb-2">
           Kontakt &amp; Preise
         </h1>
@@ -25,21 +19,10 @@ export default function KontaktPage() {
       </section>
 
       <section className="max-w-5xl mx-auto px-4 sm:px-6 pb-16">
-        <div className="grid md:grid-cols-2 gap-8">
-
-          {/* Image */}
-          <div className="relative aspect-[4/3] rounded overflow-hidden shadow-md md:row-span-2">
-            <Image
-              src="/Kontakt_&_Preise_files/01.jpg"
-              alt="Wohnanlage Am Delf Bad Zwischenahn"
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
+        <div className="grid md:grid-cols-2 gap-8 items-start">
 
           {/* Contact card */}
-          <div className="bg-muted border border-border rounded p-6 space-y-5">
+          <div className="bg-muted border border-border rounded p-6 space-y-5 h-full">
             <h2 className="font-serif text-xl font-semibold text-foreground">Kontakt</h2>
 
             <div className="space-y-3 text-sm">
@@ -83,7 +66,7 @@ export default function KontaktPage() {
           </div>
 
           {/* Pricing & conditions */}
-          <div className="bg-muted border border-border rounded p-6 space-y-5">
+          <div className="bg-muted border border-border rounded p-6 space-y-5 h-full">
             <h2 className="font-serif text-xl font-semibold text-foreground">Preise &amp; Konditionen</h2>
 
             <div className="space-y-3 text-sm text-muted-foreground">

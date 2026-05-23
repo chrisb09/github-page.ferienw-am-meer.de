@@ -8,12 +8,6 @@ export const metadata: Metadata = {
 export default function ImpressumPage() {
   return (
     <section className="max-w-3xl mx-auto px-4 sm:px-6 py-12">
-      <nav className="text-sm text-muted-foreground mb-6" aria-label="Breadcrumb">
-        <Link href="/" className="hover:text-foreground transition-colors">Willkommen</Link>
-        <span className="mx-2">/</span>
-        <span className="text-foreground">Impressum</span>
-      </nav>
-
       <h1 className="font-serif text-3xl font-bold text-foreground mb-8">Impressum</h1>
 
       <div className="space-y-6 text-sm text-muted-foreground leading-relaxed">

@@ -30,8 +30,9 @@ export default function Balkon106Page() {
         </>
       }
       images={[
-        { src: "/Balkon_106_files/P2200062-filtered.jpg", alt: "Überdachter Balkon Ferienwohnung 106 mit Seeblick" },
-        { src: "/Balkon_106_files/19.jpg", alt: "Balkon Ferienwohnung 106 – Sitzecke" },
+        { src: "/images/106/balkon-chairs.png", alt: "Überdachter Balkon Ferienwohnung 106 – Sitzbereich" },
+        { src: "/images/106/balkon-view-01.png", alt: "Ausblick vom Balkon der Wohnung 106 auf den Steg" },
+        { src: "/images/106/balkon-view-02.png", alt: "Panoramablick über den Zwischenahner See von Wohnung 106" },
       ]}
     />
   );

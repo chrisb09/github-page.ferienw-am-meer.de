@@ -11,11 +11,6 @@ export default function AnreisePage() {
   return (
     <>
       <section className="max-w-5xl mx-auto px-4 sm:px-6 pt-10 pb-4">
-        <nav className="text-sm text-muted-foreground mb-6" aria-label="Breadcrumb">
-          <Link href="/" className="hover:text-foreground transition-colors">Willkommen</Link>
-          <span className="mx-2">/</span>
-          <span className="text-foreground">Anreise</span>
-        </nav>
         <h1 className="font-serif text-3xl sm:text-4xl font-bold text-foreground mb-2">Anreise</h1>
         <p className="text-muted-foreground mb-8">So finden Sie uns in Bad Zwischenahn</p>
       </section>
@@ -25,17 +20,24 @@ export default function AnreisePage() {
         <div className="rounded overflow-hidden shadow-md border border-border" style={{ height: "420px" }}>
           <iframe
             title="Karte: Ferienwohnungen Am Meer, Am Delf 37, 26160 Bad Zwischenahn"
-            src="https://www.openstreetmap.org/export/embed.html?bbox=8.0%2C53.19%2C8.01%2C53.198&layer=mapnik&marker=53.193%2C8.005"
+            src="https://maps.google.com/maps?q=Am%20Delf%2037,%2026160%20Bad%20Zwischenahn&t=&z=15&ie=UTF8&iwloc=&output=embed"
             width="100%"
             height="100%"
             style={{ border: 0 }}
             loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
             allowFullScreen
           />
         </div>
         <p className="text-xs text-muted-foreground text-center mt-2">
-          Karte: © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">OpenStreetMap-Mitwirkende</a>
+          Größere Karte anzeigen in{" "}
+          <a
+            href="https://www.google.com/maps/search/Am+Delf+37+Bad+Zwischenahn"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-primary transition-colors underline"
+          >
+            Google Maps
+          </a>
         </p>
       </section>
 
@@ -52,7 +54,8 @@ export default function AnreisePage() {
               <h2 className="font-serif text-xl font-semibold text-foreground">Mit der Bahn</h2>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Anreise zum Bahnhof <strong className="text-foreground">Bad Zwischenahn</strong>.
+              Anreise zum Bahnhof <strong className="text-foreground">Bad Zwischenahn</strong>. 
+              Der Fußweg zum Apartment beträgt ca. 20 Minuten (1,3 km).
             </p>
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li className="flex gap-2">
@@ -65,7 +68,7 @@ export default function AnreisePage() {
                   Oder zu Fuß: Vom Bahnhof links in die Wilhelmstraße bis zum Kaufhaus Ceka,
                   dort rechts in die Mühlenstraße bis zu den Gaststätten „Sofra" und
                   „Pfeffermühle", dann links in die Lange Straße. Nach Querung der Aue rechts
-                  in den Fußweg oder in die Straße „Am Delf". Nach ca. 600 m erreichen Sie das Haus.
+                  in den Fußweg oder in die Straße „Am Delf". Das Haus liegt am Ende der Straße.
                 </span>
               </li>
             </ul>
@@ -110,22 +113,6 @@ export default function AnreisePage() {
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Address box */}
-        <div className="mt-8 p-5 border border-border rounded bg-background flex flex-col sm:flex-row sm:items-center gap-4 justify-between">
-          <div>
-            <p className="font-medium text-foreground">Adresse der Wohnungen</p>
-            <p className="text-muted-foreground text-sm">Fewo „Am Meer" &middot; Am Delf 37 &middot; 26160 Bad Zwischenahn</p>
-          </div>
-          <a
-            href="https://www.google.com/maps/search/Am+Delf+37+Bad+Zwischenahn"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="shrink-0 text-sm text-primary font-medium hover:underline"
-          >
-            In Google Maps öffnen &rarr;
-          </a>
         </div>
       </section>
     </>

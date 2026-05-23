@@ -35,9 +35,9 @@ export default function Wohnzimmer106Page() {
         </>
       }
       images={[
-        { src: "/Wohnzimmer_106_files/DSC_962613.jpg", alt: "Wohnzimmer Ferienwohnung 106 – Sitzbereich" },
-        { src: "/Wohnzimmer_106_files/DSC_963414.jpg", alt: "Wohnzimmer Ferienwohnung 106 – Küche" },
-        { src: "/Wohnzimmer_106_files/DSC_964815_72dpi.jpg", alt: "Wohnzimmer Ferienwohnung 106 – weiterer Blick" },
+        { src: "/images/106/wohnzimmer-01.png", alt: "Wohnzimmer Ferienwohnung 106 – Sitzbereich mit Seeblick" },
+        { src: "/images/106/wohnzimmer-02.png", alt: "Wohnzimmer Ferienwohnung 106 – Essbereich am Abend" },
+        { src: "/images/106/wohnzimmer-03.png", alt: "Wohnzimmer Ferienwohnung 106 – Küchenbereich" },
       ]}
     />
   );
