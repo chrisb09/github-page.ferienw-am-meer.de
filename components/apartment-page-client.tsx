@@ -4,6 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { ImageModal } from "@/components/image-modal";
+import nextConfig from "../next.config";
+
+const basePath = nextConfig.basePath || "";
 
 interface ApartmentPageClientProps {
   apartment: 105 | 106;
@@ -29,7 +32,9 @@ export function ApartmentPageClient({
   otherAptLabel,
 }: ApartmentPageClientProps) {
   const [modalOpen, setModalOpen] = useState(false);
-  const displaySrc = floorPlanSrc.startsWith('/') ? `/ferienw-preview${floorPlanSrc}` : floorPlanSrc;
+  const displaySrc = floorPlanSrc.startsWith('/') && !floorPlanSrc.startsWith(basePath) 
+    ? `${basePath}${floorPlanSrc}` 
+    : floorPlanSrc;
 
   return (
     <>

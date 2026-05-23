@@ -25,6 +25,10 @@ const allRooms = [
   { slug: "badezimmer", label: "Badezimmer" },
 ];
 
+import nextConfig from "../next.config";
+
+const basePath = nextConfig.basePath || "";
+
 export function RoomPage({ apartment, roomSlug, roomLabel, description, images }: RoomPageProps) {
   const [modalOpen, setModalOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -68,7 +72,7 @@ export function RoomPage({ apartment, roomSlug, roomLabel, description, images }
               onClick={() => openModal(0)}
             >
               <Image
-                src={images[0].src.startsWith('/') ? `/ferienw-preview${images[0].src}` : images[0].src}
+                src={images[0].src.startsWith('/') && !images[0].src.startsWith(basePath) ? `${basePath}${images[0].src}` : images[0].src}
                 alt={images[0].alt}
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -93,7 +97,7 @@ export function RoomPage({ apartment, roomSlug, roomLabel, description, images }
                 onClick={() => openModal(i + 1)}
               >
                   <Image
-                  src={img.src.startsWith('/') ? `/ferienw-preview${img.src}` : img.src}
+                  src={img.src.startsWith('/') && !img.src.startsWith(basePath) ? `${basePath}${img.src}` : img.src}
                   alt={img.alt}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
