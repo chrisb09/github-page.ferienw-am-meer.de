@@ -2,13 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { Waves, MapPin, Bike, Sailboat } from "lucide-react";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 export default function WillkommenPage() {
   return (
     <>
       {/* Hero */}
       <section className="relative h-[60vh] min-h-[400px] bg-foreground overflow-hidden">
         <Image
-          src="/ferienw-preview/images/titelbild.png"
+          src={`${basePath}/images/titelbild.png`}
           alt="Blick auf die Wohnanlage Am Delf am Zwischenahner Meer"
           fill
           className="object-cover opacity-80"
@@ -46,7 +48,7 @@ export default function WillkommenPage() {
           </div>
           <div className="relative aspect-[4/3] rounded overflow-hidden shadow-md">
             <Image
-              src="/ferienw-preview/images/lake-view-01.png"
+              src={`${basePath}/images/lake-view-01.png`}
               alt="Segelboote am Zwischenahner Meer"
               fill
               className="object-cover"
@@ -157,7 +159,7 @@ export default function WillkommenPage() {
       <section className="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-16">
         <div className="relative aspect-[16/7] rounded overflow-hidden shadow-md">
           <Image
-            src="/ferienw-preview/images/lake-view-02.png"
+            src={`${basePath}/images/lake-view-02.png`}
             alt="Luftbild Bad Zwischenahn mit Wohnanlage am See"
             fill
             className="object-cover"

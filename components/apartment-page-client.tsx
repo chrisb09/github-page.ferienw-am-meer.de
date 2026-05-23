@@ -4,9 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { ImageModal } from "@/components/image-modal";
-import nextConfig from "../next.config";
 
-const basePath = nextConfig.basePath || "";
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 interface ApartmentPageClientProps {
   apartment: 105 | 106;

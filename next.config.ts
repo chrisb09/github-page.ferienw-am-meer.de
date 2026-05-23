@@ -1,10 +1,7 @@
 import type { NextConfig } from "next";
 
-const isGithubActions = process.env.GITHUB_ACTIONS || false;
-let basePath = isGithubActions ? '/github-page.ferienw-am-meer.de' : '/ferienw-preview';
-
-// If you want it to be at the root of your custom domain, set this to empty string
-// basePath = ''; 
+const isGithubActions = process.env.GITHUB_ACTIONS === "true";
+const basePath = isGithubActions ? '/github-page.ferienw-am-meer.de' : '/ferienw-preview';
 
 const nextConfig: NextConfig = {
   output: 'export',
@@ -12,6 +9,9 @@ const nextConfig: NextConfig = {
   trailingSlash: true,
   images: {
     unoptimized: true,
+  },
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
   },
   allowedDevOrigins: ["127.0.0.1"],
 };

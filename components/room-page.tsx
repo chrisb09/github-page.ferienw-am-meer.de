@@ -25,9 +25,7 @@ const allRooms = [
   { slug: "badezimmer", label: "Badezimmer" },
 ];
 
-import nextConfig from "../next.config";
-
-const basePath = nextConfig.basePath || "";
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 export function RoomPage({ apartment, roomSlug, roomLabel, description, images }: RoomPageProps) {
   const [modalOpen, setModalOpen] = useState(false);
