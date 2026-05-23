@@ -4,8 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { ImageModal } from "@/components/image-modal";
-
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+import { resolveAssetPath } from "@/lib/utils";
 
 interface ApartmentPageClientProps {
   apartment: 105 | 106;
@@ -31,9 +30,6 @@ export function ApartmentPageClient({
   otherAptLabel,
 }: ApartmentPageClientProps) {
   const [modalOpen, setModalOpen] = useState(false);
-  const displaySrc = floorPlanSrc.startsWith('/') && !floorPlanSrc.startsWith(basePath) 
-    ? `${basePath}${floorPlanSrc}` 
-    : floorPlanSrc;
 
   return (
     <>
@@ -54,7 +50,7 @@ export function ApartmentPageClient({
             onClick={() => setModalOpen(true)}
           >
             <Image
-              src={displaySrc}
+              src={resolveAssetPath(floorPlanSrc)}
               alt={floorPlanAlt}
               width={260}
               height={340}

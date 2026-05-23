@@ -3,6 +3,7 @@
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useCallback } from "react";
+import { resolveAssetPath } from "@/lib/utils";
 
 interface ImageModalProps {
   isOpen: boolean;
@@ -12,8 +13,6 @@ interface ImageModalProps {
   onNext: () => void;
   onPrev: () => void;
 }
-
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 export function ImageModal({
   isOpen,
@@ -92,9 +91,7 @@ export function ImageModal({
       >
         <div className="relative w-full h-full">
           <Image
-            src={images[currentIndex].src.startsWith('/') && !images[currentIndex].src.startsWith(basePath) 
-              ? `${basePath}${images[currentIndex].src}` 
-              : images[currentIndex].src}
+            src={resolveAssetPath(images[currentIndex].src)}
             alt={images[currentIndex].alt}
             fill
             className="object-contain"

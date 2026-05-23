@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { ImageModal } from "./image-modal";
+import { resolveAssetPath } from "@/lib/utils";
 
 interface RoomImage {
   src: string;
@@ -24,8 +25,6 @@ const allRooms = [
   { slug: "schlafzimmer", label: "Schlafzimmer" },
   { slug: "badezimmer", label: "Badezimmer" },
 ];
-
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 export function RoomPage({ apartment, roomSlug, roomLabel, description, images }: RoomPageProps) {
   const [modalOpen, setModalOpen] = useState(false);
@@ -70,7 +69,7 @@ export function RoomPage({ apartment, roomSlug, roomLabel, description, images }
               onClick={() => openModal(0)}
             >
               <Image
-                src={images[0].src.startsWith('/') && !images[0].src.startsWith(basePath) ? `${basePath}${images[0].src}` : images[0].src}
+                src={resolveAssetPath(images[0].src)}
                 alt={images[0].alt}
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -95,7 +94,7 @@ export function RoomPage({ apartment, roomSlug, roomLabel, description, images }
                 onClick={() => openModal(i + 1)}
               >
                   <Image
-                  src={img.src.startsWith('/') && !img.src.startsWith(basePath) ? `${basePath}${img.src}` : img.src}
+                  src={resolveAssetPath(img.src)}
                   alt={img.alt}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
