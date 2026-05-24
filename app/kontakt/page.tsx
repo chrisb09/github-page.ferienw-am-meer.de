@@ -73,7 +73,7 @@ export default function KontaktPage() {
               <p>
                 Aktuelle Preise können Sie auf der Seite der{" "}
                 <a
-                  href="https://www.bad-zwischenahn-touristik.de/buchen/unterkuenfte/DE4/a003b288-0130-4214-b005-3069363f1306/ferienwohnung--am-meer-?useDetailSearch=false"
+                  href="https://www.bad-zwischenahn-touristik.de/hotel/ferienwohnung-am-meer"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-primary inline-flex items-center gap-1 hover:underline"
