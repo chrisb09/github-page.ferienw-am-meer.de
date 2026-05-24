@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { ImageModal } from "@/components/image-modal";
 import { resolveAssetPath } from "@/lib/utils";
 
@@ -30,9 +31,38 @@ export function ApartmentPageClient({
   otherAptLabel,
 }: ApartmentPageClientProps) {
   const [modalOpen, setModalOpen] = useState(false);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+  const router = useRouter();
+
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEndEvent = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+
+    // Swiping left goes to the first room (e.g., Wohnzimmer)
+    if (isLeftSwipe && rooms.length > 1) {
+      router.push(rooms[1].href);
+    }
+  };
 
   return (
-    <>
+    <div
+      onTouchStart={onTouchStart}
+      onTouchMove={onTouchMove}
+      onTouchEnd={onTouchEndEvent}
+    >
       <section className="max-w-5xl mx-auto px-4 sm:px-6 pt-10 pb-4">
         <div className="flex flex-wrap items-baseline gap-3 mb-2">
           <h1 className="font-serif text-3xl sm:text-4xl font-bold text-foreground">
@@ -85,15 +115,23 @@ export function ApartmentPageClient({
             Zimmer &amp; Räume
           </h2>
           <div className="flex flex-wrap gap-3">
-            {rooms.map((room) => (
-              <Link
-                key={room.href}
-                href={room.href}
-                className="px-4 py-2 border border-border rounded text-sm text-foreground hover:border-primary hover:text-primary transition-colors"
-              >
-                {room.label}
-              </Link>
-            ))}
+            {rooms.map((room, index) => {
+              const isActive = index === 0; // Overview is always index 0
+              return (
+                <Link
+                  key={room.href}
+                  href={room.href}
+                  className={`px-4 py-2 border rounded text-sm transition-colors ${
+                    isActive
+                      ? "border-primary text-primary font-medium"
+                      : "border-border text-foreground hover:border-primary hover:text-primary"
+                  }`}
+                  aria-current={isActive ? "page" : undefined}
+                >
+                  {room.label}
+                </Link>
+              );
+            })}
           </div>
         </div>
 
@@ -117,6 +155,6 @@ export function ApartmentPageClient({
         onNext={() => {}}
         onPrev={() => {}}
       />
-    </>
+    </div>
   );
 }

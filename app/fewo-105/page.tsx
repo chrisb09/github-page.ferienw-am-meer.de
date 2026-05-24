@@ -8,6 +8,7 @@ export const metadata: Metadata = {
 };
 
 const rooms = [
+  { href: "/fewo-105", label: "Übersicht" },
   { href: "/fewo-105/wohnzimmer", label: "Wohnzimmer" },
   { href: "/fewo-105/balkon", label: "Balkon" },
   { href: "/fewo-105/schlafzimmer", label: "Schlafzimmer" },

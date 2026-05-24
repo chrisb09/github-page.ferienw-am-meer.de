@@ -21,6 +21,7 @@ interface RoomPageProps {
 }
 
 const allRooms = [
+  { slug: "", label: "Übersicht" },
   { slug: "wohnzimmer", label: "Wohnzimmer" },
   { slug: "balkon", label: "Balkon / Loggia" },
   { slug: "schlafzimmer", label: "Schlafzimmer" },
@@ -69,10 +70,12 @@ export function RoomPage({ apartment, roomSlug, roomLabel, description, images }
     const isRightSwipe = distance < -minSwipeDistance;
 
     if (isLeftSwipe && currentRoomIndex < allRooms.length - 1) {
-      router.push(`/${fewoSlug}/${allRooms[currentRoomIndex + 1].slug}`);
+      const nextRoom = allRooms[currentRoomIndex + 1];
+      router.push(nextRoom.slug ? `/${fewoSlug}/${nextRoom.slug}` : `/${fewoSlug}`);
     }
     if (isRightSwipe && currentRoomIndex > 0) {
-      router.push(`/${fewoSlug}/${allRooms[currentRoomIndex - 1].slug}`);
+      const prevRoom = allRooms[currentRoomIndex - 1];
+      router.push(prevRoom.slug ? `/${fewoSlug}/${prevRoom.slug}` : `/${fewoSlug}`);
     }
   };
 
@@ -158,10 +161,11 @@ export function RoomPage({ apartment, roomSlug, roomLabel, description, images }
           <div className="flex flex-wrap gap-3">
             {allRooms.map((room) => {
               const isActive = room.slug === roomSlug;
+              const href = room.slug ? `/${fewoSlug}/${room.slug}` : `/${fewoSlug}`;
               return (
                 <Link
                   key={room.slug}
-                  href={`/${fewoSlug}/${room.slug}`}
+                  href={href}
                   className={`px-4 py-2 border rounded text-sm transition-colors ${
                     isActive
                       ? "border-primary text-primary font-medium"
@@ -173,14 +177,6 @@ export function RoomPage({ apartment, roomSlug, roomLabel, description, images }
                 </Link>
               );
             })}
-          </div>
-          <div className="mt-6">
-            <Link
-              href={`/${fewoSlug}`}
-              className="text-sm text-primary font-medium hover:underline"
-            >
-              &larr; Zurück zu {fewoLabel}
-            </Link>
           </div>
         </div>
       </section>
