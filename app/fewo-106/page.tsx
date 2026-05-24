@@ -28,28 +28,20 @@ export default function Fewo106Page() {
       description={
         <>
           <p>
-            Beide Wohnungen liegen direkt nebeneinander in der 4. Etage und
-            sind mit einem Fahrstuhl erreichbar.
+            Die <strong className="text-foreground">70 qm</strong> große Wohnung liegt in der 4. Etage und
+            ist barrierefrei mit dem Fahrstuhl erreichbar.
           </p>
           <p>
-            Durch einen separaten Eingang ist ein barrierefreies Erreichen der
-            Wohnung möglich.
+            Sie bietet ein Wohnzimmer mit Kochnische and zusätzlicher Schlafnische, 
+            ein Schlafzimmer mit Doppelbett, Duschbad and einen Abstellraum.
           </p>
           <p>
-            Die <strong className="text-foreground">70 qm</strong> teilen sich
-            auf in ein Wohnzimmer mit Kochnische und einer zusätzlichen
-            Schlafnische, ein Schlafzimmer mit Doppelbett, Duschbad, Flur,
-            Abstellraum und einen{" "}
-            <strong className="text-foreground">
-              9&nbsp;m langen, 18&nbsp;qm großen überdachten Balkon
-            </strong>{" "}
-            zum See (Loggia).
+            Besonderes Highlight ist die <strong className="text-foreground">18 qm große Loggia</strong> zum See, 
+            die Ihnen einen traumhaften Ausblick bietet.
           </p>
           <p>
-            Die Wohnung ist komplett ausgestattet. Sollte etwas fehlen, sorge
-            ich gerne für Abhilfe.
+            Die Wohnung ist komplett ausgestattet; ein eigener Fahrradraum steht Ihnen ebenfalls zur Verfügung.
           </p>
-          <p>Es steht Ihnen ein eigener Fahrradraum zur Verfügung.</p>
         </>
       }
     />

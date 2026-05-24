@@ -52,9 +52,9 @@ export function ApartmentPageClient({
             <Image
               src={resolveAssetPath(floorPlanSrc)}
               alt={floorPlanAlt}
-              width={260}
-              height={340}
-              className="w-full max-w-[260px] h-auto mix-blend-multiply transition-transform duration-500 group-hover:scale-105"
+              width={220}
+              height={300}
+              className="w-full max-w-[220px] h-auto mix-blend-multiply transition-transform duration-500 group-hover:scale-105"
               priority
             />
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
