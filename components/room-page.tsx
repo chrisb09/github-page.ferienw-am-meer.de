@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { ImageModal } from "./image-modal";
 import { resolveAssetPath } from "@/lib/utils";
 
@@ -29,6 +30,12 @@ const allRooms = [
 export function RoomPage({ apartment, roomSlug, roomLabel, description, images }: RoomPageProps) {
   const [modalOpen, setModalOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+  const router = useRouter();
+
+  const minSwipeDistance = 50;
+  const currentRoomIndex = allRooms.findIndex((r) => r.slug === roomSlug);
 
   const fewoSlug = `fewo-${apartment}`;
   const fewoLabel = `Wohnung ${apartment}`;
@@ -46,8 +53,35 @@ export function RoomPage({ apartment, roomSlug, roomLabel, description, images }
     setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
   };
 
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEndEvent = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe && currentRoomIndex < allRooms.length - 1) {
+      router.push(`/${fewoSlug}/${allRooms[currentRoomIndex + 1].slug}`);
+    }
+    if (isRightSwipe && currentRoomIndex > 0) {
+      router.push(`/${fewoSlug}/${allRooms[currentRoomIndex - 1].slug}`);
+    }
+  };
+
   return (
-    <>
+    <div
+      onTouchStart={onTouchStart}
+      onTouchMove={onTouchMove}
+      onTouchEnd={onTouchEndEvent}
+    >
       <section className="max-w-5xl mx-auto px-4 sm:px-6 pt-10 pb-4">
         <h1 className="font-serif text-3xl sm:text-4xl font-bold text-foreground mb-1">
           {roomLabel}
@@ -150,6 +184,6 @@ export function RoomPage({ apartment, roomSlug, roomLabel, description, images }
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }
