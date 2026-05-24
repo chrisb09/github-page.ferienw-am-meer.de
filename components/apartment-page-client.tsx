@@ -104,7 +104,7 @@ export function ApartmentPageClient({
             href={otherAptHref}
             className="text-sm text-primary font-medium hover:underline"
           >
-            {otherAptLabel} ansehen &rarr;
+            {otherAptLabel} {" "} ansehen &rarr;
           </Link>
         </div>
       </section>
