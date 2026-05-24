@@ -2,7 +2,7 @@
 
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
-import { useEffect, useCallback, useState } from "react";
+import { useEffect, useCallback, useState, useRef } from "react";
 import { resolveAssetPath } from "@/lib/utils";
 
 interface ImageModalProps {
@@ -26,6 +26,8 @@ export function ImageModal({
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
   const minSwipeDistance = 50;
 
+  const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
       if (!isOpen) return;
@@ -46,6 +48,7 @@ export function ImageModal({
     return () => {
       document.body.style.overflow = "unset";
       window.removeEventListener("keydown", handleKeyDown);
+      if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
     };
   }, [isOpen, handleKeyDown]);
 
@@ -72,6 +75,28 @@ export function ImageModal({
     }
   };
 
+  const handleWheel = (e: React.WheelEvent) => {
+    if (images.length <= 1) return;
+    
+    // Ignore wheel events if we are in cooldown to prevent rapid skipping
+    if (scrollTimeoutRef.current) return;
+
+    // We mainly want to capture horizontal scrolling (two fingers left/right on trackpad)
+    const threshold = 30;
+    if (Math.abs(e.deltaX) > Math.abs(e.deltaY) && Math.abs(e.deltaX) > threshold) {
+      if (e.deltaX > 0) {
+        onNext();
+      } else {
+        onPrev();
+      }
+      
+      // Start cooldown
+      scrollTimeoutRef.current = setTimeout(() => {
+        scrollTimeoutRef.current = null;
+      }, 500); 
+    }
+  };
+
   if (!isOpen) return null;
 
   return (
@@ -81,6 +106,7 @@ export function ImageModal({
       onTouchStart={onTouchStart}
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEndEvent}
+      onWheel={handleWheel}
     >
       <button
         onClick={onClose}
