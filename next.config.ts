@@ -1,7 +1,8 @@
 import type { NextConfig } from "next";
 
-const isGithubActions = process.env.GITHUB_ACTIONS === "true";
-const basePath = isGithubActions ? '/github-page.ferienw-am-meer.de' : '/ferienw-preview';
+// Priority: 1. Environment Variable, 2. GitHub Actions detection, 3. Default preview path
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || 
+                 (process.env.GITHUB_ACTIONS === "true" ? '/github-page.ferienw-am-meer.de' : '/ferienw-preview');
 
 console.log(`Building with basePath: ${basePath}`);
 
@@ -12,6 +13,7 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
+  // Ensure the variable is available to both server and client
   env: {
     NEXT_PUBLIC_BASE_PATH: basePath,
   },

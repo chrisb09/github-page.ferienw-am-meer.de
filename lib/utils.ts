@@ -3,6 +3,7 @@
  * Uses the environment variable injected at build time.
  */
 export function getBasePath() {
+  // During build, Next.js replaces process.env.NEXT_PUBLIC_BASE_PATH with the string value.
   return process.env.NEXT_PUBLIC_BASE_PATH || "";
 }
 
@@ -16,7 +17,9 @@ export function resolveAssetPath(path: string) {
   const basePath = getBasePath();
   
   // If the path already includes the basePath, don't add it again
-  if (basePath && path.startsWith(basePath)) return path;
+  if (basePath && (path === basePath || path.startsWith(basePath + "/"))) {
+    return path;
+  }
   
   return `${basePath}${path}`;
 }
