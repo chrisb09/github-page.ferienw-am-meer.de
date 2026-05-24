@@ -60,7 +60,7 @@ export default function AnreisePage() {
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li className="flex gap-2">
                 <span className="text-primary mt-0.5 shrink-0">&#8226;</span>
-                <span>Dann mit dem Taxi zur Straße <strong className="text-foreground">Am Delf 37</strong>.</span>
+                <span>Alternativ mit dem Taxi in 5 Minuten zur Straße „Am Delf 37“.</span>
               </li>
               <li className="flex gap-2">
                 <span className="text-primary mt-0.5 shrink-0">&#8226;</span>

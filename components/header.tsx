@@ -6,8 +6,8 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { href: "/fewo-106", label: "Wohnung 106" },
   { href: "/fewo-105", label: "Wohnung 105" },
+  { href: "/fewo-106", label: "Wohnung 106" },
   { href: "/anreise", label: "Anreise" },
   { href: "/freizeit", label: "Freizeit" },
   { href: "/kontakt", label: "Kontakt & Preise" },
