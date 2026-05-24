@@ -116,18 +116,18 @@ export default function WillkommenPage() {
           <div className="grid md:grid-cols-2 gap-6">
             {[
               {
-                href: "/fewo-106",
-                name: "Wohnung 106",
-                size: "70 qm",
-                detail:
-                  "Wohnzimmer mit Kochnische, Schlafzimmer, Duschbad, 18 qm Loggia zum See",
-              },
-              {
                 href: "/fewo-105",
                 name: "Wohnung 105",
                 size: "50 qm",
                 detail:
                   "Wohnzimmer mit Küchenzeile, Schlafzimmer, Dusche, überdachter Balkon",
+              },
+              {
+                href: "/fewo-106",
+                name: "Wohnung 106",
+                size: "70 qm",
+                detail:
+                  "Wohnzimmer mit Kochnische, Schlafzimmer, Duschbad, 18 qm Loggia zum See",
               },
             ].map((apt) => (
               <Link
