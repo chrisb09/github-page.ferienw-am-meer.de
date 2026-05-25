@@ -24,7 +24,12 @@ export default function DatenschutzPage() {
             <p>Ellen Bothe // Ellen Günther</p>
             <p>Am Delf 27a</p>
             <p>26160 Bad Zwischenahn</p>
-            <p>E-Mail: info@ferienw-am-meer.de</p>
+            <p>
+              E-Mail:{" "}
+              <a href="mailto:Ellenbothe@gmx.net" className="text-primary hover:underline">Ellenbothe@gmx.net</a>
+              {" "}&middot;{" "}
+              <a href="mailto:Ellen.Guenther@gmx.net" className="text-primary hover:underline">Ellen.Guenther@gmx.net</a>
+            </p>
           </div>
         </div>
 

@@ -10,13 +10,13 @@ export const metadata: Metadata = {
 const pricingData = [
   {
     season: "Hauptsaison",
-    period: "April – Oktober",
+    period: "April – Oktober sowie 20.12. – 07.01.",
     fewo105: "74,00 €",
     fewo106: "84,00 €",
   },
   {
     season: "Nebensaison",
-    period: "November – März",
+    period: "Restliche Zeit",
     fewo105: "69,00 €",
     fewo106: "79,00 €",
   },
@@ -140,11 +140,6 @@ export default function KontaktPage() {
               </div>
             </div>
 
-            <p className="text-[11px] text-muted-foreground italic px-2">
-              Gemäß Preisangabenverordnung (PAngV) handelt es sich bei den genannten Preisen um Endpreise, 
-              da die Kosten für Endreinigung, Bettwäsche und Handtücher bereits enthalten sind.
-            </p>
-
             {/* External Info */}
             <div className="p-5 rounded-lg border border-primary/20 bg-primary/5 flex items-start gap-4">
               <Info className="text-primary shrink-0 mt-1" size={24} />
@@ -190,18 +185,23 @@ export default function KontaktPage() {
                     <a href="tel:+491714492282" className="block text-primary hover:underline font-medium">
                       0171 4492282 (Mobil)
                     </a>
-                    <p className="text-muted-foreground text-xs">Fax: 04403 949122</p>
                   </div>
                 </div>
 
                 <div className="flex gap-4 border-t border-border/50 pt-6">
                   <Mail className="text-primary shrink-0" size={20} />
-                  <div>
+                  <div className="space-y-2">
                     <a
-                      href="mailto:info@ferienw-am-meer.de"
-                      className="text-primary hover:underline font-medium break-all text-base"
+                      href="mailto:Ellenbothe@gmx.net"
+                      className="block text-primary hover:underline font-medium break-all text-base"
                     >
-                      info@ferienw-am-meer.de
+                      Ellenbothe@gmx.net
+                    </a>
+                    <a
+                      href="mailto:Ellen.Guenther@gmx.net"
+                      className="block text-primary hover:underline font-medium break-all text-base"
+                    >
+                      Ellen.Guenther@gmx.net
                     </a>
                   </div>
                 </div>

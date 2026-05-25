@@ -19,7 +19,12 @@ export default function ImpressumPage() {
             <p>26160 Bad Zwischenahn</p>
             <div className="mt-2 space-y-0.5">
                 <p>Telefon: 04403 58307</p>
-                <p>E-Mail: <a href="mailto:info@ferienw-am-meer.de" className="text-primary hover:underline">info@ferienw-am-meer.de</a></p>
+                <p>
+                  E-Mail:{" "}
+                  <a href="mailto:Ellenbothe@gmx.net" className="text-primary hover:underline">Ellenbothe@gmx.net</a>
+                  {" "}&middot;{" "}
+                  <a href="mailto:Ellen.Guenther@gmx.net" className="text-primary hover:underline">Ellen.Guenther@gmx.net</a>
+                </p>
             </div>
           </div>
         </div>

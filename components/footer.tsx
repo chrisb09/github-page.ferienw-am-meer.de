@@ -4,8 +4,8 @@ export function Footer() {
   return (
     <footer className="bg-foreground text-primary-foreground mt-6">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-6">
-        <div className="flex flex-col md:flex-row justify-between items-end gap-6">
-          <div className="space-y-0.5">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+          <div className="space-y-1">
             <h3 className="font-serif text-lg font-medium leading-tight">Ferienwohnungen Am Meer</h3>
             <p className="text-sm text-primary-foreground/50">Bad Zwischenahn</p>
           </div>
@@ -18,10 +18,10 @@ export function Footer() {
               </a>
               <span className="text-primary-foreground/20">|</span>
               <a
-                href="mailto:info@ferienw-am-meer.de"
+                href="mailto:Ellenbothe@gmx.net"
                 className="hover:text-accent transition-colors"
               >
-                info@ferienw-am-meer.de
+                Ellenbothe@gmx.net
               </a>
             </p>
           </div>
