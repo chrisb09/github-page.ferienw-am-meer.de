@@ -1,7 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Waves, MapPin, Bike, Sailboat } from "lucide-react";
-import { resolveAssetPath, getBlurPlaceholder } from "@/lib/utils";
+import { ProgressiveImage } from "@/components/progressive-image";
 
 export default function WillkommenPage() {
   return (
@@ -11,12 +10,10 @@ export default function WillkommenPage() {
         className="relative h-[60vh] min-h-[400px] bg-foreground overflow-hidden"
         style={{ position: "relative", height: "60vh", minHeight: "400px" }}
       >
-        <Image
-          src={resolveAssetPath("/images/titelbild.webp")}
+        <ProgressiveImage
+          src="/images/titelbild.webp"
           alt="Blick auf die Wohnanlage Am Delf am Zwischenahner Meer"
           fill
-          placeholder={getBlurPlaceholder("/images/titelbild.webp") ? "blur" : "empty"}
-          blurDataURL={getBlurPlaceholder("/images/titelbild.webp")}
           className="object-cover opacity-80"
           priority
         />
@@ -54,12 +51,10 @@ export default function WillkommenPage() {
             className="relative aspect-[4/3] rounded overflow-hidden shadow-md"
             style={{ position: "relative", aspectRatio: "4/3" }}
           >
-            <Image
-              src={resolveAssetPath("/images/lake-view-01.webp")}
+            <ProgressiveImage
+              src="/images/lake-view-01.webp"
               alt="Segelboote am Zwischenahner Meer"
               fill
-              placeholder={getBlurPlaceholder("/images/lake-view-01.webp") ? "blur" : "empty"}
-              blurDataURL={getBlurPlaceholder("/images/lake-view-01.webp")}
               className="object-cover"
             />
           </div>
@@ -170,12 +165,10 @@ export default function WillkommenPage() {
           className="relative aspect-[16/7] rounded overflow-hidden shadow-md"
           style={{ position: "relative", aspectRatio: "16/7" }}
         >
-          <Image
-            src={resolveAssetPath("/images/lake-view-02.webp")}
+          <ProgressiveImage
+            src="/images/lake-view-02.webp"
             alt="Luftbild Bad Zwischenahn mit Wohnanlage am See"
             fill
-            placeholder={getBlurPlaceholder("/images/lake-view-02.webp") ? "blur" : "empty"}
-            blurDataURL={getBlurPlaceholder("/images/lake-view-02.webp")}
             className="object-cover"
           />
         </div>

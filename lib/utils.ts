@@ -27,10 +27,10 @@ export function resolveAssetPath(path: string) {
 }
 
 /**
- * Returns a blur data URL for a given image path if it exists in the pre-generated placeholders.
+ * Returns blur data for a given image path if it exists in the pre-generated placeholders.
  */
-export function getBlurPlaceholder(path: string) {
+export function getBlurData(path: string) {
   if (!path) return undefined;
   const cleanPath = path.startsWith("/") ? path : `/${path}`;
-  return (placeholders as Record<string, string>)[cleanPath] || undefined;
+  return (placeholders as Record<string, { base64: string, preview: string }>)[cleanPath] || undefined;
 }

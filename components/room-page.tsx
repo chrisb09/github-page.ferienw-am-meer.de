@@ -1,11 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { ImageModal } from "./image-modal";
-import { resolveAssetPath, getBlurPlaceholder } from "@/lib/utils";
+import { ProgressiveImage } from "./progressive-image";
 
 interface RoomImage {
   src: string;
@@ -106,12 +105,10 @@ export function RoomPage({ apartment, roomSlug, roomLabel, description, images }
               style={{ position: "relative", aspectRatio: "4/3" }}
               onClick={() => openModal(0)}
             >
-              <Image
-                src={resolveAssetPath(images[0].src)}
+              <ProgressiveImage
+                src={images[0].src}
                 alt={images[0].alt}
                 fill
-                placeholder={getBlurPlaceholder(images[0].src) ? "blur" : "empty"}
-                blurDataURL={getBlurPlaceholder(images[0].src)}
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
                 priority
               />
@@ -131,14 +128,13 @@ export function RoomPage({ apartment, roomSlug, roomLabel, description, images }
               <div 
                 key={i} 
                 className="relative aspect-[4/3] rounded overflow-hidden shadow-sm cursor-zoom-in group"
+                style={{ position: "relative", aspectRatio: "4/3" }}
                 onClick={() => openModal(i + 1)}
               >
-                  <Image
-                  src={resolveAssetPath(img.src)}
+                  <ProgressiveImage
+                  src={img.src}
                   alt={img.alt}
                   fill
-                  placeholder={getBlurPlaceholder(img.src) ? "blur" : "empty"}
-                  blurDataURL={getBlurPlaceholder(img.src)}
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center text-white opacity-0 group-hover:opacity-100">
