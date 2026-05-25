@@ -68,22 +68,20 @@ export function ProgressiveImage({
         className="absolute inset-0 bg-cover bg-center blur-2xl scale-110"
         style={{ 
           backgroundImage: `url(${blurData.base64})`,
-          // Only show while the preview or full image is missing
           opacity: currentStage === "blur" ? 1 : 0,
-          transition: "opacity 0.4s ease-out",
+          transition: priority ? "none" : "opacity 0.4s ease-out",
           visibility: currentStage === "full" ? "hidden" : "visible"
         }}
       />
 
-      {/* 2. The Intermediate Preview (Middle layer) - Non-blurred for detail */}
+      {/* 2. The Intermediate Preview (Middle layer) - Ultra High Priority */}
       <Image
         src={resolveAssetPath(blurData.preview)}
         alt={alt}
         fill={fill}
         width={width}
         height={height}
-        // Removed 'blur-sm' for a sharper low-res look.
-        className={`${className} transition-opacity duration-500 ${
+        className={`${className} ${priority ? "" : "transition-opacity duration-500"} ${
           currentStage === "preview" ? "opacity-100" : "opacity-0"
         }`}
         onLoad={handlePreviewLoad}
@@ -93,7 +91,7 @@ export function ProgressiveImage({
         fetchPriority="high"
       />
 
-      {/* 3. The Full Image (Top layer) - Hidden until 100% ready */}
+      {/* 3. The Full Image (Top layer) - Hidden until 100% ready to prevent 'wipe' */}
       <Image
         ref={fullImageRef}
         src={resolveAssetPath(src)}
@@ -101,13 +99,14 @@ export function ProgressiveImage({
         fill={fill}
         width={width}
         height={height}
-        // Ensuring opacity is 0 until 'full' state is reached to prevent top-to-bottom wipe
-        className={`${className} transition-opacity duration-700 ${
+        className={`${className} ${priority ? "" : "transition-opacity duration-700"} ${
           currentStage === "full" ? "opacity-100" : "opacity-0"
         }`}
         onLoad={handleFullLoad}
+        // Ensure the hero image is never lazy loaded
+        priority={priority}
         // @ts-ignore
-        fetchPriority={priority ? "auto" : "low"}
+        fetchPriority={priority ? "high" : "low"}
       />
     </div>
   );
