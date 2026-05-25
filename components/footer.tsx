@@ -11,7 +11,7 @@ export function Footer() {
           </div>
 
           <div className="text-sm text-primary-foreground/60 text-right">
-            <p>Ellen Günther &middot; Am Delf 27a, 26160 Bad Zwischenahn</p>
+            <p>Ellen Bothe // Ellen Günther &middot; Am Delf 27a, 26160 Bad Zwischenahn</p>
             <p className="space-x-3">
               <a href="tel:+49440358307" className="hover:text-accent transition-colors">
                 04403 58307
@@ -28,7 +28,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-primary-foreground/10 mt-4 pt-4 text-[10px] text-primary-foreground/30 flex justify-between items-center">
-          <p>Copyright &copy; {new Date().getFullYear()} Ellen Günther. Alle Rechte vorbehalten.</p>
+          <p>Copyright &copy; {new Date().getFullYear()} Ellen Bothe // Ellen Günther. Alle Rechte vorbehalten.</p>
           <div className="flex gap-4">
             <Link href="/datenschutz" className="hover:text-primary-foreground/60 transition-colors uppercase tracking-widest">
               Datenschutz
