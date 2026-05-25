@@ -19,6 +19,20 @@ export const metadata: Metadata = {
   description:
     "Zwei komfortable Ferienwohnungen direkt am Zwischenahner Meer in Bad Zwischenahn. Seesicht, allergikerfreundlich.",
   keywords: "Ferienwohnung, Bad Zwischenahn, Zwischenahner Meer, Urlaub, Nordsee",
+  icons: {
+    icon: [
+      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
+  manifest: "/site.webmanifest",
+  appleWebApp: {
+    title: "Am Meer",
+  },
 };
 
 export const viewport: Viewport = {
