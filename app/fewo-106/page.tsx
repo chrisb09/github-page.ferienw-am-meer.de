@@ -33,8 +33,9 @@ export default function Fewo106Page() {
             ist barrierefrei mit dem Fahrstuhl erreichbar.
           </p>
           <p>
-            Sie bietet ein Wohnzimmer mit Kochnische and zusätzlicher Schlafnische, 
-            ein Schlafzimmer mit Doppelbett, Duschbad and einen Abstellraum.
+            Sie bietet ein Wohnzimmer mit Kochnische und zusätzlicher Schlafnische,
+            ein Schlafzimmer mit Doppelbett, Duschbad und einen Abstellraum.
+
           </p>
           <p>
             Besonderes Highlight ist die <strong className="text-foreground">18 qm große Loggia</strong> zum See, 
