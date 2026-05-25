@@ -27,6 +27,7 @@ export function ImageModal({
   const minSwipeDistance = 50;
 
   const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const modalRef = useRef<HTMLDivElement>(null);
 
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
@@ -38,30 +39,67 @@ export function ImageModal({
     [isOpen, onClose, onNext, onPrev]
   );
 
+  const handleWheel = useCallback((e: WheelEvent) => {
+    if (images.length <= 1) return;
+    
+    // We mainly want to capture horizontal scrolling (two fingers left/right on trackpad)
+    const threshold = 20;
+    const isHorizontal = Math.abs(e.deltaX) > Math.abs(e.deltaY);
+
+    if (isHorizontal && Math.abs(e.deltaX) > threshold) {
+      // Prevent browser back/forward navigation
+      e.preventDefault();
+
+      // Ignore wheel events if we are in cooldown to prevent rapid skipping
+      if (scrollTimeoutRef.current) return;
+
+      if (e.deltaX > 0) {
+        onNext();
+      } else {
+        onPrev();
+      }
+      
+      // Start cooldown - slightly shorter for better feel
+      scrollTimeoutRef.current = setTimeout(() => {
+        scrollTimeoutRef.current = null;
+      }, 400); 
+    }
+  }, [images.length, onNext, onPrev]);
+
   useEffect(() => {
+    const currentModal = modalRef.current;
     if (isOpen) {
       document.body.style.overflow = "hidden";
       window.addEventListener("keydown", handleKeyDown);
+      if (currentModal) {
+        currentModal.addEventListener("wheel", handleWheel, { passive: false });
+      }
     } else {
       document.body.style.overflow = "unset";
     }
     return () => {
       document.body.style.overflow = "unset";
       window.removeEventListener("keydown", handleKeyDown);
+      if (currentModal) {
+        currentModal.removeEventListener("wheel", handleWheel);
+      }
       if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
     };
-  }, [isOpen, handleKeyDown]);
+  }, [isOpen, handleKeyDown, handleWheel]);
 
   const onTouchStart = (e: React.TouchEvent) => {
+    e.stopPropagation();
     setTouchEnd(null);
     setTouchStart(e.targetTouches[0].clientX);
   };
 
   const onTouchMove = (e: React.TouchEvent) => {
+    e.stopPropagation();
     setTouchEnd(e.targetTouches[0].clientX);
   };
 
-  const onTouchEndEvent = () => {
+  const onTouchEnd = (e: React.TouchEvent) => {
+    e.stopPropagation();
     if (!touchStart || !touchEnd) return;
     const distance = touchStart - touchEnd;
     const isLeftSwipe = distance > minSwipeDistance;
@@ -75,38 +113,16 @@ export function ImageModal({
     }
   };
 
-  const handleWheel = (e: React.WheelEvent) => {
-    if (images.length <= 1) return;
-    
-    // Ignore wheel events if we are in cooldown to prevent rapid skipping
-    if (scrollTimeoutRef.current) return;
-
-    // We mainly want to capture horizontal scrolling (two fingers left/right on trackpad)
-    const threshold = 30;
-    if (Math.abs(e.deltaX) > Math.abs(e.deltaY) && Math.abs(e.deltaX) > threshold) {
-      if (e.deltaX > 0) {
-        onNext();
-      } else {
-        onPrev();
-      }
-      
-      // Start cooldown
-      scrollTimeoutRef.current = setTimeout(() => {
-        scrollTimeoutRef.current = null;
-      }, 500); 
-    }
-  };
-
   if (!isOpen) return null;
 
   return (
     <div
+      ref={modalRef}
       className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-sm transition-opacity duration-300"
       onClick={onClose}
       onTouchStart={onTouchStart}
       onTouchMove={onTouchMove}
-      onTouchEnd={onTouchEndEvent}
-      onWheel={handleWheel}
+      onTouchEnd={onTouchEnd}
     >
       <button
         onClick={onClose}

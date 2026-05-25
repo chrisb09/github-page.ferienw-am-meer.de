@@ -64,7 +64,7 @@ export function RoomPage({ apartment, roomSlug, roomLabel, description, images }
   };
 
   const onTouchEndEvent = () => {
-    if (!touchStart || !touchEnd) return;
+    if (modalOpen || !touchStart || !touchEnd) return;
     const distance = touchStart - touchEnd;
     const isLeftSwipe = distance > minSwipeDistance;
     const isRightSwipe = distance < -minSwipeDistance;

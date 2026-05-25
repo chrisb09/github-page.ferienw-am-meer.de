@@ -47,7 +47,7 @@ export function ApartmentPageClient({
   };
 
   const onTouchEndEvent = () => {
-    if (!touchStart || !touchEnd) return;
+    if (modalOpen || !touchStart || !touchEnd) return;
     const distance = touchStart - touchEnd;
     const isLeftSwipe = distance > minSwipeDistance;
 
