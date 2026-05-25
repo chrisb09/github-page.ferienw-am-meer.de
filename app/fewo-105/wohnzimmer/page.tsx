@@ -24,7 +24,7 @@ export default function Wohnzimmer105Page() {
           </p>
           <p>
             Die Küchenzeile ist voll ausgestattet: Kaffeemaschine, Herd, Kühlschrank,
-            Mikrowelle sowie alle notwendigen Küchenutensilien.
+            Mikrowelle, Heißluftfritteuse sowie alle notwendigen Küchenutensilien.
           </p>
           <p>
             Das Wohnzimmer ist modern und gemütlich eingerichtet und bietet Platz zum

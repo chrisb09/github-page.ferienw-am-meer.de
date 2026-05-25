@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Freizeit – Ferienwohnungen Am Meer Bad Zwischenahn",
@@ -26,10 +25,10 @@ const activities = [
     ],
   },
   {
-    title: "Tennis",
+    title: "Tennis & Padel",
     items: [
       { text: "Der Tennisverein befindet sich auf der anderen Straßenseite – Gastspieler willkommen" },
-      { text: "Öffentliche Tennisanlage mit Hallen- und Außenplätzen in Aschhausen", href: "http://www.tennis-und-meer.de/" },
+      { text: "Neu: Padel-Plätze auf der gegenüberliegenden Tennisanlage" },
     ],
   },
   {
@@ -43,8 +42,13 @@ const activities = [
   {
     title: "Wellness",
     items: [
-      { text: 'Unten im Haus bietet die \u201eWellness-Oase\u201c ein vielfältiges Verwöhnprogramm', href: "http://www.das-health-care-studio-mit-herz.de/index.php" },
-      { text: 'Wellness-Welt \u201eWellness am Meer\u201c angeschlossen ans Wellenbad', href: "http://www.wellness-am-meer.de/" },
+      { text: 'Wellness-Welt „Wellness am Meer“ angeschlossen ans Wellenbad', href: "http://www.wellness-am-meer.de/" },
+    ],
+  },
+  {
+    title: "Spielbank",
+    items: [
+      { text: "Spielbank Bad Zwischenahn – Glücksspiel und Events im Jagdhaus Eiden", href: "https://www.merkur-spielbanken-nds.de/bad-zwischenahn/" },
     ],
   },
   {
@@ -59,7 +63,6 @@ const activities = [
       { text: "Direkt im Haus: Die „Schänke zum Wels“ bietet kühle Getränke und kleine Gerichte in gemütlicher Atmosphäre" },
       { text: "Traditionelle Spezialitäten: Ammerländer Schinken und Smoortaal" },
       { text: "Gemütliche Cafés und erstklassige Restaurants im Ortskern und am See" },
-      { text: "Tipp: Besuch einer der historischen Schinkenräuchereien" },
     ],
   },
   {

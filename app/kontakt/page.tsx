@@ -4,7 +4,7 @@ import { Phone, Mail, MapPin, ExternalLink, Calendar, CheckCircle2, Ban, Info } 
 export const metadata: Metadata = {
   title: "Kontakt & Preise – Ferienwohnungen Am Meer",
   description:
-    "Preise, Saisonzeiten und Kontaktdaten der Ferienwohnungen Am Meer in Bad Zwischenahn. Ellen Bothe // Ellen Günther, Am Delf 27a.",
+    "Preise, Saisonzeiten und Kontaktdaten der Ferienwohnungen Am Meer in Bad Zwischenahn. Ellen Bothe (geb. Günther), Am Delf 27a.",
 };
 
 const pricingData = [
@@ -170,7 +170,7 @@ export default function KontaktPage() {
                 <div className="flex gap-4">
                   <MapPin className="text-primary shrink-0" size={20} />
                   <div>
-                    <p className="font-medium text-foreground text-base">Ellen Bothe // Ellen Günther</p>
+                    <p className="font-medium text-foreground text-base">Ellen Bothe (geb. Günther)</p>
                     <p className="text-muted-foreground">Am Delf 27a</p>
                     <p className="text-muted-foreground">26160 Bad Zwischenahn</p>
                   </div>

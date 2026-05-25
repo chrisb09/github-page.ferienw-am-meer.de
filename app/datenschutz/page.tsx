@@ -21,7 +21,7 @@ export default function DatenschutzPage() {
           <h2 className="font-medium text-foreground mb-2 text-base">2. Verantwortliche Stelle</h2>
           <p>Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:</p>
           <div className="mt-2 text-foreground">
-            <p>Ellen Bothe // Ellen Günther</p>
+            <p>Ellen Bothe (geb. Günther)</p>
             <p>Am Delf 27a</p>
             <p>26160 Bad Zwischenahn</p>
             <p>

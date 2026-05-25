@@ -30,7 +30,7 @@ export default function Wohnzimmer106Page() {
           </p>
           <p>
             Die Kochnische ist voll ausgestattet: Kaffeemaschine, Wasserkocher, Herd,
-            Mikrowelle, Kühlschrank mit Gefrierfach sowie Toaster und Spülmaschine.
+            Mikrowelle, Kühlschrank, kleiner Gefrierschrank sowie Heißluftfritteuse, Toaster und Spülmaschine.
           </p>
         </>
       }

@@ -14,7 +14,7 @@ export default function ImpressumPage() {
         <div>
           <h2 className="font-medium text-foreground mb-1 text-base underline underline-offset-4 decoration-primary/30">Angaben gemäß § 5 TMG</h2>
           <div className="text-foreground mt-2">
-            <p className="font-semibold text-base">Ellen Bothe // Ellen Günther</p>
+            <p className="font-semibold text-base">Ellen Bothe (geb. Günther)</p>
             <p>Am Delf 27a</p>
             <p>26160 Bad Zwischenahn</p>
             <div className="mt-2 space-y-0.5">
@@ -64,7 +64,7 @@ export default function ImpressumPage() {
             Das Copyright für veröffentlichte, vom Autor selbst erstellte Objekte bleibt allein beim Autor der Seiten. Eine Vervielfältigung oder Verwendung solcher Grafiken, Tondokumente, Videosequenzen und Texte in anderen elektronischen oder gedruckten Publikationen ist ohne ausdrückliche Zustimmung des Autors nicht gestattet.
           </p>
           <p className="mt-4 bg-muted/50 p-4 rounded border-l-4 border-primary/30 italic">
-            Die auf dieser Website verwendeten Fotografien unterliegen dem Urheberrecht von Ellen Bothe // Ellen Günther sowie beteiligten Dritten. Die digitale Aufbereitung, Restaurierung und KI-gestützte Optimierung des Bildmaterials erfolgte durch Christian F. Brinkmann.
+            Die auf dieser Website verwendeten Fotografien unterliegen dem Urheberrecht von Ellen Bothe (geb. Günther) sowie beteiligten Dritten. Die digitale Aufbereitung, Restaurierung und KI-gestützte Optimierung des Bildmaterials erfolgte durch Christian F. Brinkmann.
           </p>
         </div>
 
