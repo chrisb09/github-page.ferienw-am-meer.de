@@ -62,35 +62,38 @@ export function ProgressiveImage({
   }
 
   return (
-    <div className="relative w-full h-full overflow-hidden" style={style}>
+    <div className="relative w-full h-full overflow-hidden bg-muted" style={style}>
       {/* 1. The 10x10 Base64 Blur (Base layer) - Instant */}
       <div
         className="absolute inset-0 bg-cover bg-center blur-2xl scale-110"
         style={{ 
           backgroundImage: `url(${blurData.base64})`,
+          // Only show while the preview or full image is missing
+          opacity: currentStage === "blur" ? 1 : 0,
+          transition: "opacity 0.4s ease-out",
           visibility: currentStage === "full" ? "hidden" : "visible"
         }}
       />
 
-      {/* 2. The Intermediate Preview (Middle layer) - Ultra High Priority */}
+      {/* 2. The Intermediate Preview (Middle layer) - Non-blurred for detail */}
       <Image
         src={resolveAssetPath(blurData.preview)}
         alt={alt}
         fill={fill}
         width={width}
         height={height}
-        className={`${className} blur-sm scale-105 transition-opacity duration-500 ${
-          currentStage === "preview" || currentStage === "blur" ? "opacity-100" : "opacity-0"
+        // Removed 'blur-sm' for a sharper low-res look.
+        className={`${className} transition-opacity duration-500 ${
+          currentStage === "preview" ? "opacity-100" : "opacity-0"
         }`}
         onLoad={handlePreviewLoad}
         style={{ visibility: currentStage === "full" ? "hidden" : "visible" }}
-        // Force the browser to fetch the tiny preview first
         priority={priority}
-        // @ts-ignore - experimental attribute
+        // @ts-ignore
         fetchPriority="high"
       />
 
-      {/* 3. The Full Image (Top layer) - Lower Priority than preview */}
+      {/* 3. The Full Image (Top layer) - Hidden until 100% ready */}
       <Image
         ref={fullImageRef}
         src={resolveAssetPath(src)}
@@ -98,13 +101,12 @@ export function ProgressiveImage({
         fill={fill}
         width={width}
         height={height}
+        // Ensuring opacity is 0 until 'full' state is reached to prevent top-to-bottom wipe
         className={`${className} transition-opacity duration-700 ${
           currentStage === "full" ? "opacity-100" : "opacity-0"
         }`}
         onLoad={handleFullLoad}
-        // If it's a priority image, we still want it relatively fast, 
-        // but it should NEVER block the preview.
-        // @ts-ignore - experimental attribute
+        // @ts-ignore
         fetchPriority={priority ? "auto" : "low"}
       />
     </div>
