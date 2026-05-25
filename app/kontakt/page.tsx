@@ -7,6 +7,21 @@ export const metadata: Metadata = {
     "Preise, Saisonzeiten und Kontaktdaten der Ferienwohnungen Am Meer in Bad Zwischenahn. Ellen Günther, Am Delf 27a.",
 };
 
+const pricingData = [
+  {
+    season: "Hauptsaison",
+    period: "April – Oktober",
+    fewo105: "74,00 €",
+    fewo106: "84,00 €",
+  },
+  {
+    season: "Nebensaison",
+    period: "November – März",
+    fewo105: "69,00 €",
+    fewo106: "79,00 €",
+  },
+];
+
 export default function KontaktPage() {
   return (
     <>
@@ -31,7 +46,31 @@ export default function KontaktPage() {
                 <Calendar className="text-primary" size={20} />
                 <h2 className="font-serif text-xl font-semibold text-foreground">Übernachtungspreise</h2>
               </div>
-              <div className="overflow-x-auto">
+
+              {/* Mobile View: Stacked Cards */}
+              <div className="md:hidden divide-y border-border">
+                {pricingData.map((row) => (
+                  <div key={row.season} className="p-6 space-y-4">
+                    <div className="flex justify-between items-baseline">
+                      <h3 className="font-medium text-foreground">{row.season}</h3>
+                      <span className="text-xs text-muted-foreground">{row.period}</span>
+                    </div>
+                    <div className="grid grid-cols-2 gap-4 pt-2">
+                      <div className="bg-muted/30 p-3 rounded text-center">
+                        <p className="text-[10px] uppercase tracking-wider text-muted-foreground mb-1">Fewo 105</p>
+                        <p className="text-lg font-semibold text-foreground">{row.fewo105}</p>
+                      </div>
+                      <div className="bg-muted/30 p-3 rounded text-center">
+                        <p className="text-[10px] uppercase tracking-wider text-muted-foreground mb-1">Fewo 106</p>
+                        <p className="text-lg font-semibold text-foreground">{row.fewo106}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Desktop View: Traditional Table */}
+              <div className="hidden md:block overflow-x-auto">
                 <table className="w-full text-sm text-left border-collapse">
                   <thead>
                     <tr className="bg-muted/30 text-muted-foreground font-medium border-b border-border">
@@ -42,21 +81,18 @@ export default function KontaktPage() {
                     </tr>
                   </thead>
                   <tbody className="divide-y border-border text-foreground">
-                    <tr>
-                      <td className="px-6 py-4 font-medium">Hauptsaison</td>
-                      <td className="px-6 py-4 text-muted-foreground">April &ndash; Oktober</td>
-                      <td className="px-6 py-4 text-right">74,00 &euro;</td>
-                      <td className="px-6 py-4 text-right">84,00 &euro;</td>
-                    </tr>
-                    <tr>
-                      <td className="px-6 py-4 font-medium">Nebensaison</td>
-                      <td className="px-6 py-4 text-muted-foreground">November &ndash; März</td>
-                      <td className="px-6 py-4 text-right">69,00 &euro;</td>
-                      <td className="px-6 py-4 text-right">79,00 &euro;</td>
-                    </tr>
+                    {pricingData.map((row) => (
+                      <tr key={row.season}>
+                        <td className="px-6 py-4 font-medium">{row.season}</td>
+                        <td className="px-6 py-4 text-muted-foreground">{row.period}</td>
+                        <td className="px-6 py-4 text-right">{row.fewo105}</td>
+                        <td className="px-6 py-4 text-right">{row.fewo106}</td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>
+
               <div className="px-6 py-3 bg-muted/20 text-[11px] text-muted-foreground flex justify-between border-t border-border/50">
                 <span>* Alle Angaben ohne Gewähr</span>
                 <span className="italic">Stand: Mai 2026</span>
