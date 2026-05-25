@@ -7,7 +7,10 @@ export default function WillkommenPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative h-[60vh] min-h-[400px] bg-foreground overflow-hidden">
+      <section 
+        className="relative h-[60vh] min-h-[400px] bg-foreground overflow-hidden"
+        style={{ position: "relative", height: "60vh", minHeight: "400px" }}
+      >
         <Image
           src={resolveAssetPath("/images/titelbild.webp")}
           alt="Blick auf die Wohnanlage Am Delf am Zwischenahner Meer"
@@ -47,7 +50,10 @@ export default function WillkommenPage() {
               am Wanderweg um den See.
             </p>
           </div>
-          <div className="relative aspect-[4/3] rounded overflow-hidden shadow-md">
+          <div 
+            className="relative aspect-[4/3] rounded overflow-hidden shadow-md"
+            style={{ position: "relative", aspectRatio: "4/3" }}
+          >
             <Image
               src={resolveAssetPath("/images/lake-view-01.webp")}
               alt="Segelboote am Zwischenahner Meer"
@@ -160,7 +166,10 @@ export default function WillkommenPage() {
 
       {/* Aerial photo */}
       <section className="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-16">
-        <div className="relative aspect-[16/7] rounded overflow-hidden shadow-md">
+        <div 
+          className="relative aspect-[16/7] rounded overflow-hidden shadow-md"
+          style={{ position: "relative", aspectRatio: "16/7" }}
+        >
           <Image
             src={resolveAssetPath("/images/lake-view-02.webp")}
             alt="Luftbild Bad Zwischenahn mit Wohnanlage am See"

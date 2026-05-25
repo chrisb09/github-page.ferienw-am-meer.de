@@ -103,6 +103,7 @@ export function RoomPage({ apartment, roomSlug, roomLabel, description, images }
           {images[0] && (
             <div 
               className="relative aspect-[4/3] rounded overflow-hidden shadow-md order-1 md:order-2 cursor-zoom-in group"
+              style={{ position: "relative", aspectRatio: "4/3" }}
               onClick={() => openModal(0)}
             >
               <Image
