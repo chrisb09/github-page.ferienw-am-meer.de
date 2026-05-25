@@ -19,6 +19,9 @@ const nextConfig: NextConfig = {
     NEXT_PUBLIC_BASE_PATH: basePath,
   },
   allowedDevOrigins: ["127.0.0.1"],
+  experimental: {
+    inlineCss: true,
+  },
 };
 
 export default nextConfig;
