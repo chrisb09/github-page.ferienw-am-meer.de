@@ -1,3 +1,5 @@
+import placeholders from "./placeholders.json";
+
 /**
  * Dynamically determines the base path for the application.
  * Uses the environment variable injected at build time.
@@ -22,4 +24,13 @@ export function resolveAssetPath(path: string) {
   }
   
   return `${basePath}${path}`;
+}
+
+/**
+ * Returns a blur data URL for a given image path if it exists in the pre-generated placeholders.
+ */
+export function getBlurPlaceholder(path: string) {
+  if (!path) return undefined;
+  const cleanPath = path.startsWith("/") ? path : `/${path}`;
+  return (placeholders as Record<string, string>)[cleanPath] || undefined;
 }

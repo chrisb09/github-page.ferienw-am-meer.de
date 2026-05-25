@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { ImageModal } from "@/components/image-modal";
-import { resolveAssetPath } from "@/lib/utils";
+import { resolveAssetPath, getBlurPlaceholder } from "@/lib/utils";
 
 interface ApartmentPageClientProps {
   apartment: 105 | 106;
@@ -84,6 +84,8 @@ export function ApartmentPageClient({
               alt={floorPlanAlt}
               width={220}
               height={300}
+              placeholder={getBlurPlaceholder(floorPlanSrc) ? "blur" : "empty"}
+              blurDataURL={getBlurPlaceholder(floorPlanSrc)}
               className="w-full max-w-[220px] h-auto mix-blend-multiply transition-transform duration-500 group-hover:scale-105"
               priority
             />

@@ -15,7 +15,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-
   "bugs": {
     "url": "https://github.com/chrisb09/github-page.ferienw-am-meer.de/issues"
   },
@@ -23,14 +22,17 @@
   "dependencies": {
     "lucide-react": "^1.16.0",
     "next": "^16.2.6",
+    "plaiceholder": "^3.0.0",
     "react": "^19.2.6",
-    "react-dom": "^19.2.6"
+    "react-dom": "^19.2.6",
+    "sharp": "^0.34.5"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.0",
     "@types/node": "^25.9.1",
     "@types/react": "^19.2.15",
     "@types/react-dom": "^19.2.3",
+    "@types/sharp": "^0.31.1",
     "autoprefixer": "^10.5.0",
     "postcss": "^8.5.15",
     "tailwindcss": "^4.3.0",

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Waves, MapPin, Bike, Sailboat } from "lucide-react";
-import { resolveAssetPath } from "@/lib/utils";
+import { resolveAssetPath, getBlurPlaceholder } from "@/lib/utils";
 
 export default function WillkommenPage() {
   return (
@@ -12,6 +12,8 @@ export default function WillkommenPage() {
           src={resolveAssetPath("/images/titelbild.webp")}
           alt="Blick auf die Wohnanlage Am Delf am Zwischenahner Meer"
           fill
+          placeholder={getBlurPlaceholder("/images/titelbild.webp") ? "blur" : "empty"}
+          blurDataURL={getBlurPlaceholder("/images/titelbild.webp")}
           className="object-cover opacity-80"
           priority
         />
@@ -37,10 +39,10 @@ export default function WillkommenPage() {
               In dieser Wohnanlage in Bad Zwischenahn, die in den See
               hineingebaut wurde, liegen die beiden Ferienwohnungen. Große
               Fenster bieten einen freien Blick auf den See mit seinen
-              Segelbooten, den Enten, Schwänen und Haubentauchern.
+              Segelbooten, den Enten, Schwänen and Haubentauchern.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Das Ortszentrum und das öffentliche Freibad erreichen Sie in
+              Das Ortszentrum and das öffentliche Freibad erreichen Sie in
               5 Minuten. Trotzdem sind die Wohnungen ruhig gelegen, direkt
               am Wanderweg um den See.
             </p>
@@ -50,6 +52,8 @@ export default function WillkommenPage() {
               src={resolveAssetPath("/images/lake-view-01.webp")}
               alt="Segelboote am Zwischenahner Meer"
               fill
+              placeholder={getBlurPlaceholder("/images/lake-view-01.webp") ? "blur" : "empty"}
+              blurDataURL={getBlurPlaceholder("/images/lake-view-01.webp")}
               className="object-cover"
             />
           </div>
@@ -61,7 +65,7 @@ export default function WillkommenPage() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-10">
           <p className="text-muted-foreground leading-relaxed text-center max-w-2xl mx-auto">
             Frühsport gefällig? Sie können nach dem Aufstehen direkt am Haus im
-            See schwimmen gehen und während des Frühstücks dem zwischenahner
+            See schwimmen gehen and während des Frühstücks dem zwischenahner
             Fischer beim Leeren seiner Reusen zuschauen.
           </p>
         </div>
@@ -161,6 +165,8 @@ export default function WillkommenPage() {
             src={resolveAssetPath("/images/lake-view-02.webp")}
             alt="Luftbild Bad Zwischenahn mit Wohnanlage am See"
             fill
+            placeholder={getBlurPlaceholder("/images/lake-view-02.webp") ? "blur" : "empty"}
+            blurDataURL={getBlurPlaceholder("/images/lake-view-02.webp")}
             className="object-cover"
           />
         </div>
