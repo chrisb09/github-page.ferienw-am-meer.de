@@ -39,7 +39,8 @@ export default function WillkommenPage() {
               In dieser Wohnanlage in Bad Zwischenahn, die in den See
               hineingebaut wurde, liegen die beiden Ferienwohnungen. Große
               Fenster bieten einen freien Blick auf den See mit seinen
-              Segelbooten, den Enten, Schwänen and Haubentauchern.
+              Segelbooten, den Enten, Schwänen and Haubentauchern. 
+              Direkt im Haus lädt zudem die „Schänke zum Wels“ zu Getränken und kleinen Speisen ein.
             </p>
             <p className="text-muted-foreground leading-relaxed">
               Das Ortszentrum and das öffentliche Freibad erreichen Sie in

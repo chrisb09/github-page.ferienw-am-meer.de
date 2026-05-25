@@ -56,6 +56,7 @@ const activities = [
   {
     title: "Gastronomie",
     items: [
+      { text: "Direkt im Haus: Die „Schänke zum Wels“ bietet kühle Getränke und kleine Gerichte in gemütlicher Atmosphäre" },
       { text: "Traditionelle Spezialitäten: Ammerländer Schinken und Smoortaal" },
       { text: "Gemütliche Cafés und erstklassige Restaurants im Ortskern und am See" },
       { text: "Tipp: Besuch einer der historischen Schinkenräuchereien" },
