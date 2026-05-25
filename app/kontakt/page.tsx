@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Phone, Mail, MapPin, ExternalLink, Calendar, CheckCircle2, Ban } from "lucide-react";
+import { Phone, Mail, MapPin, ExternalLink, Calendar, CheckCircle2, Ban, Info } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Kontakt & Preise – Ferienwohnungen Am Meer",
   description:
-    "Preise und Kontaktdaten der Ferienwohnungen Am Meer in Bad Zwischenahn. Ellen Günther, Am Delf 27a.",
+    "Preise, Saisonzeiten und Kontaktdaten der Ferienwohnungen Am Meer in Bad Zwischenahn. Ellen Günther, Am Delf 27a.",
 };
 
 export default function KontaktPage() {
@@ -36,6 +36,7 @@ export default function KontaktPage() {
                   <thead>
                     <tr className="bg-muted/30 text-muted-foreground font-medium border-b border-border">
                       <th className="px-6 py-3">Saison</th>
+                      <th className="px-6 py-3">Zeitraum</th>
                       <th className="px-6 py-3 text-right">Fewo 105</th>
                       <th className="px-6 py-3 text-right">Fewo 106</th>
                     </tr>
@@ -43,15 +44,22 @@ export default function KontaktPage() {
                   <tbody className="divide-y border-border text-foreground">
                     <tr>
                       <td className="px-6 py-4 font-medium">Hauptsaison</td>
+                      <td className="px-6 py-4 text-muted-foreground">April &ndash; Oktober</td>
                       <td className="px-6 py-4 text-right">74,00 &euro;</td>
                       <td className="px-6 py-4 text-right">84,00 &euro;</td>
                     </tr>
                     <tr>
                       <td className="px-6 py-4 font-medium">Nebensaison</td>
-                      <td className="px-6 py-4 text-right italic text-muted-foreground" colSpan={2}>Preise auf Anfrage</td>
+                      <td className="px-6 py-4 text-muted-foreground">November &ndash; März</td>
+                      <td className="px-6 py-4 text-right">69,00 &euro;</td>
+                      <td className="px-6 py-4 text-right">79,00 &euro;</td>
                     </tr>
                   </tbody>
                 </table>
+              </div>
+              <div className="px-6 py-3 bg-muted/20 text-[11px] text-muted-foreground flex justify-between border-t border-border/50">
+                <span>* Alle Angaben ohne Gewähr</span>
+                <span className="italic">Stand: Mai 2026</span>
               </div>
               <div className="p-6 bg-muted/10 border-t border-border/50">
                 <div className="bg-background p-4 rounded-md border border-border/50">
@@ -97,11 +105,11 @@ export default function KontaktPage() {
             </div>
 
             {/* External Info */}
-            <div className="p-4 rounded-lg border border-primary/20 bg-primary/5 flex items-start gap-4">
-              <ExternalLink className="text-primary shrink-0 mt-1" size={20} />
+            <div className="p-5 rounded-lg border border-primary/20 bg-primary/5 flex items-start gap-4">
+              <Info className="text-primary shrink-0 mt-1" size={24} />
               <div>
-                <p className="text-sm text-foreground font-medium">Verbindliche Preise &amp; Online-Buchung</p>
-                <p className="text-sm text-muted-foreground leading-relaxed mt-1">
+                <p className="text-sm text-foreground font-semibold">Verbindliche Preise &amp; Online-Buchung</p>
+                <p className="text-sm text-muted-foreground leading-relaxed mt-1.5">
                   Bitte beachten Sie, dass die hier angegebenen Preise lediglich der Orientierung dienen. 
                   Die <span className="font-semibold text-foreground">verbindlichen, tagesaktuellen Preise</span> sowie die Verfügbarkeit finden Sie ausschließlich auf der offiziellen Buchungsseite der{" "}
                   <a
