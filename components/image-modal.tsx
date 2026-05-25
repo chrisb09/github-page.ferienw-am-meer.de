@@ -27,6 +27,7 @@ export function ImageModal({
   const minSwipeDistance = 50;
 
   const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const scrollAccumulatorRef = useRef<number>(0);
   const modalRef = useRef<HTMLDivElement>(null);
 
   const handleKeyDown = useCallback(
@@ -42,30 +43,39 @@ export function ImageModal({
   const handleWheel = useCallback((e: WheelEvent) => {
     if (images.length <= 1) return;
     
-    // We want to capture horizontal scrolling (two fingers left/right on trackpad)
-    // Some trackpads might have smaller deltaX values, so we reduce the threshold
-    const threshold = 10;
     const absX = Math.abs(e.deltaX);
     const absY = Math.abs(e.deltaY);
 
     // If the movement is predominantly horizontal
-    if (absX > absY && absX > threshold) {
+    if (absX > absY) {
       // Prevent browser back/forward navigation
       e.preventDefault();
 
-      // Ignore wheel events if we are in cooldown to prevent rapid skipping
+      // Ignore wheel events if we are in cooldown
       if (scrollTimeoutRef.current) return;
 
-      if (e.deltaX > 0) {
-        onNext();
-      } else {
-        onPrev();
+      // Accumulate the scroll delta
+      scrollAccumulatorRef.current += e.deltaX;
+
+      // A higher threshold (accumulator) requires a more deliberate gesture
+      const triggerThreshold = 100;
+
+      if (Math.abs(scrollAccumulatorRef.current) >= triggerThreshold) {
+        if (scrollAccumulatorRef.current > 0) {
+          onNext();
+        } else {
+          onPrev();
+        }
+        
+        // Reset accumulator and start cooldown
+        scrollAccumulatorRef.current = 0;
+        scrollTimeoutRef.current = setTimeout(() => {
+          scrollTimeoutRef.current = null;
+        }, 600); 
       }
-      
-      // Start cooldown
-      scrollTimeoutRef.current = setTimeout(() => {
-        scrollTimeoutRef.current = null;
-      }, 400); 
+    } else {
+      // Reset accumulator if user starts scrolling vertically
+      scrollAccumulatorRef.current = 0;
     }
   }, [images.length, onNext, onPrev]);
 
@@ -73,12 +83,14 @@ export function ImageModal({
     const currentModal = modalRef.current;
     if (isOpen) {
       document.body.style.overflow = "hidden";
+      scrollAccumulatorRef.current = 0;
       window.addEventListener("keydown", handleKeyDown);
       if (currentModal) {
         currentModal.addEventListener("wheel", handleWheel, { passive: false });
       }
     } else {
       document.body.style.overflow = "unset";
+      scrollAccumulatorRef.current = 0;
       if (scrollTimeoutRef.current) {
         clearTimeout(scrollTimeoutRef.current);
         scrollTimeoutRef.current = null;
