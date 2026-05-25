@@ -79,6 +79,10 @@ export function ImageModal({
       }
     } else {
       document.body.style.overflow = "unset";
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current);
+        scrollTimeoutRef.current = null;
+      }
     }
     return () => {
       document.body.style.overflow = "unset";
@@ -86,22 +90,28 @@ export function ImageModal({
       if (currentModal) {
         currentModal.removeEventListener("wheel", handleWheel);
       }
-      if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current);
+        scrollTimeoutRef.current = null;
+      }
     };
   }, [isOpen, handleKeyDown, handleWheel]);
 
   const onTouchStart = (e: React.TouchEvent) => {
+    if (!isOpen) return;
     e.stopPropagation();
     setTouchEnd(null);
     setTouchStart(e.targetTouches[0].clientX);
   };
 
   const onTouchMove = (e: React.TouchEvent) => {
+    if (!isOpen) return;
     e.stopPropagation();
     setTouchEnd(e.targetTouches[0].clientX);
   };
 
   const onTouchEnd = (e: React.TouchEvent) => {
+    if (!isOpen) return;
     e.stopPropagation();
     if (!touchStart || !touchEnd) return;
     const distance = touchStart - touchEnd;
@@ -116,12 +126,12 @@ export function ImageModal({
     }
   };
 
-  if (!isOpen) return null;
-
   return (
     <div
       ref={modalRef}
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-sm transition-opacity duration-300"
+      className={`fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-sm transition-all duration-300 ${
+        isOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
+      }`}
       onClick={onClose}
       onTouchStart={onTouchStart}
       onTouchMove={onTouchMove}
