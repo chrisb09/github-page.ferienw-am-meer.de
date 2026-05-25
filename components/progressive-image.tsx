@@ -63,7 +63,7 @@ export function ProgressiveImage({
 
   return (
     <div className="relative w-full h-full overflow-hidden" style={style}>
-      {/* 1. The 10x10 Base64 Blur (Base layer) */}
+      {/* 1. The 10x10 Base64 Blur (Base layer) - Instant */}
       <div
         className="absolute inset-0 bg-cover bg-center blur-2xl scale-110"
         style={{ 
@@ -72,7 +72,7 @@ export function ProgressiveImage({
         }}
       />
 
-      {/* 2. The Intermediate Preview (Middle layer) */}
+      {/* 2. The Intermediate Preview (Middle layer) - Ultra High Priority */}
       <Image
         src={resolveAssetPath(blurData.preview)}
         alt={alt}
@@ -84,9 +84,13 @@ export function ProgressiveImage({
         }`}
         onLoad={handlePreviewLoad}
         style={{ visibility: currentStage === "full" ? "hidden" : "visible" }}
+        // Force the browser to fetch the tiny preview first
+        priority={priority}
+        // @ts-ignore - experimental attribute
+        fetchPriority="high"
       />
 
-      {/* 3. The Full Image (Top layer) */}
+      {/* 3. The Full Image (Top layer) - Lower Priority than preview */}
       <Image
         ref={fullImageRef}
         src={resolveAssetPath(src)}
@@ -97,8 +101,11 @@ export function ProgressiveImage({
         className={`${className} transition-opacity duration-700 ${
           currentStage === "full" ? "opacity-100" : "opacity-0"
         }`}
-        priority={priority}
         onLoad={handleFullLoad}
+        // If it's a priority image, we still want it relatively fast, 
+        // but it should NEVER block the preview.
+        // @ts-ignore - experimental attribute
+        fetchPriority={priority ? "auto" : "low"}
       />
     </div>
   );
