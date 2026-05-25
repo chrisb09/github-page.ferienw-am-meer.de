@@ -37,7 +37,7 @@ export default function Wohnzimmer106Page() {
       images={[
         { src: "/images/106/wohnzimmer-01.webp", alt: "Wohnzimmer Ferienwohnung 106 – Sitzbereich mit Seeblick" },
         { src: "/images/106/wohnzimmer-02.webp", alt: "Wohnzimmer Ferienwohnung 106 – Essbereich am Tag" },
-        { src: "/images/106/wohnzimmer-03.webp", alt: "Wohnzimmer Ferienwohnung 106 – Küchenbereich" },
+        { src: "/images/106/wohnzimmer-03.webp", alt: "Wohnzimmer Ferienwohnung 106 – Küchenbereich am Tag" },
       ]}
     />
   );
