@@ -17,7 +17,7 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "Ferienwohnungen Am Meer – Bad Zwischenahn",
   description:
-    "Zwei komfortable Ferienwohnungen direkt am Zwischenahner Meer in Bad Zwischenahn. Seesicht, allergikerfreundliche.",
+    "Zwei komfortable Ferienwohnungen direkt am Zwischenahner Meer in Bad Zwischenahn. Seesicht, allergikerfreundlich.",
   keywords: "Ferienwohnung, Bad Zwischenahn, Zwischenahner Meer, Urlaub, Nordsee",
 };
 

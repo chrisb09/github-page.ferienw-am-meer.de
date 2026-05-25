@@ -88,7 +88,7 @@ export default function KontaktPage() {
                 {[
                   "Mietzeitraum: Samstag bis Samstag oder nach Absprache",
                   "Endreinigung, Bettwäsche, Handtücher und Nebenkosten inklusive",
-                  "Die Wohnungen sind allergikerfreundliche – keine Vermietung an Gäste mit Hunden",
+                  "Die Wohnungen sind allergikerfreundlich – keine Vermietung an Gäste mit Hunden",
                   "Nicht enthalten ist die Kurtaxe",
                 ].map((item) => (
                   <li key={item} className="flex gap-2">
