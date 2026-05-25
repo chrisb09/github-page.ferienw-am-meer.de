@@ -38,6 +38,11 @@ export default function ImpressumPage() {
             oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
           </p>
         </div>
+
+        <div>
+          <h2 className="font-medium text-foreground mb-1">Gestaltung und Entwicklung</h2>
+          <p>Christian F. Brinkmann</p>
+        </div>
       </div>
     </section>
   );
