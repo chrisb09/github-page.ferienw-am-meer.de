@@ -42,11 +42,14 @@ export function ImageModal({
   const handleWheel = useCallback((e: WheelEvent) => {
     if (images.length <= 1) return;
     
-    // We mainly want to capture horizontal scrolling (two fingers left/right on trackpad)
-    const threshold = 20;
-    const isHorizontal = Math.abs(e.deltaX) > Math.abs(e.deltaY);
+    // We want to capture horizontal scrolling (two fingers left/right on trackpad)
+    // Some trackpads might have smaller deltaX values, so we reduce the threshold
+    const threshold = 10;
+    const absX = Math.abs(e.deltaX);
+    const absY = Math.abs(e.deltaY);
 
-    if (isHorizontal && Math.abs(e.deltaX) > threshold) {
+    // If the movement is predominantly horizontal
+    if (absX > absY && absX > threshold) {
       // Prevent browser back/forward navigation
       e.preventDefault();
 
@@ -59,7 +62,7 @@ export function ImageModal({
         onPrev();
       }
       
-      // Start cooldown - slightly shorter for better feel
+      // Start cooldown
       scrollTimeoutRef.current = setTimeout(() => {
         scrollTimeoutRef.current = null;
       }, 400); 
