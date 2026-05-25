@@ -100,9 +100,10 @@ export default function KontaktPage() {
             <div className="p-4 rounded-lg border border-primary/20 bg-primary/5 flex items-start gap-4">
               <ExternalLink className="text-primary shrink-0 mt-1" size={20} />
               <div>
-                <p className="text-sm text-foreground font-medium">Verfügbarkeit &amp; Online-Buchung</p>
+                <p className="text-sm text-foreground font-medium">Verbindliche Preise &amp; Online-Buchung</p>
                 <p className="text-sm text-muted-foreground leading-relaxed mt-1">
-                  Die tagesaktuellen Preise und die Verfügbarkeit finden Sie auch auf der offiziellen Buchungsseite der{" "}
+                  Bitte beachten Sie, dass die hier angegebenen Preise lediglich der Orientierung dienen. 
+                  Die <span className="font-semibold text-foreground">verbindlichen, tagesaktuellen Preise</span> sowie die Verfügbarkeit finden Sie ausschließlich auf der offiziellen Buchungsseite der{" "}
                   <a
                     href="https://www.bad-zwischenahn-touristik.de/hotel/ferienwohnung-am-meer"
                     target="_blank"
