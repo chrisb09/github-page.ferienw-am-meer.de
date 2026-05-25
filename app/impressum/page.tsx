@@ -41,7 +41,25 @@ export default function ImpressumPage() {
 
         <div>
           <h2 className="font-medium text-foreground mb-1">Gestaltung und Entwicklung</h2>
-          <p>Christian F. Brinkmann</p>
+          <p>
+            <a 
+              href="https://christian-f-brinkmann.de" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-primary hover:underline"
+            >
+              Christian F. Brinkmann
+            </a>
+            {" "}&middot;{" "}
+            <a 
+              href="https://github.com/chrisb09" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-primary hover:underline"
+            >
+              GitHub
+            </a>
+          </p>
         </div>
       </div>
     </section>
