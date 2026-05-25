@@ -17,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/fewo-106/schlafzimmer',
     '/fewo-106/badezimmer',
     '/fewo-106/balkon',
+    '/fotogalerie',
     '/anreise',
     '/freizeit',
     '/kontakt',
