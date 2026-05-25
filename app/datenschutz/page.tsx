@@ -52,7 +52,13 @@ export default function DatenschutzPage() {
         <div>
           <h2 className="font-medium text-foreground mb-2 text-base">4. Ihre Rechte</h2>
           <p>
-            Sie haben jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht, die Berichtigung oder Löschung dieser Daten zu verlangen. Hierzu sowie zu weiteren Fragen zum Thema Datenschutz können Sie sich jederzeit unter der im Impressum angegebenen Adresse an uns wenden.
+            Sie haben im Rahmen der geltenden gesetzlichen Bestimmungen jederzeit das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten. 
+          </p>
+          <p className="mt-2">
+            Da wir selbst keine personenbezogenen Daten speichern und lediglich die Infrastruktur von <strong>GitHub Pages</strong> nutzen, beziehen sich diese Rechte in Bezug auf die Server-Log-Dateien (z.B. IP-Adressen) auf die Datenverarbeitung durch GitHub. Wir haben keinen direkten Zugriff auf diese Protokolle und können diese weder einsehen, noch verändern oder löschen. Für die Ausübung Ihrer Rechte bezüglich der Server-Daten müssten Sie sich daher direkt an GitHub wenden.
+          </p>
+          <p className="mt-2">
+            Sollten Sie uns per E-Mail oder Telefon kontaktieren (siehe Impressum), verarbeiten wir Ihre dort freiwillig mitgeteilten Daten nur zum Zweck der Bearbeitung Ihrer Anfrage.
           </p>
         </div>
 
