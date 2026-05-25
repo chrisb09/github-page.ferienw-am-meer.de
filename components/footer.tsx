@@ -29,9 +29,14 @@ export function Footer() {
 
         <div className="border-t border-primary-foreground/10 mt-4 pt-4 text-[10px] text-primary-foreground/30 flex justify-between items-center">
           <p>Copyright &copy; {new Date().getFullYear()} Ellen Günther. Alle Rechte vorbehalten.</p>
-          <Link href="/impressum" className="hover:text-primary-foreground/60 transition-colors uppercase tracking-widest">
-            Impressum
-          </Link>
+          <div className="flex gap-4">
+            <Link href="/datenschutz" className="hover:text-primary-foreground/60 transition-colors uppercase tracking-widest">
+              Datenschutz
+            </Link>
+            <Link href="/impressum" className="hover:text-primary-foreground/60 transition-colors uppercase tracking-widest">
+              Impressum
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
