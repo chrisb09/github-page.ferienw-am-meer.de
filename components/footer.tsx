@@ -13,7 +13,7 @@ export function Footer() {
           <div className="text-sm text-primary-foreground/60 text-right">
             <p>Ellen Günther &middot; Am Delf 27a, 26160 Bad Zwischenahn</p>
             <p className="space-x-3">
-              <a href="tel:+494403583070" className="hover:text-accent transition-colors">
+              <a href="tel:+49440358307" className="hover:text-accent transition-colors">
                 04403 58307
               </a>
               <span className="text-primary-foreground/20">|</span>

@@ -40,12 +40,12 @@ export default function KontaktPage() {
                 <Phone size={16} className="text-primary mt-0.5 shrink-0" />
                 <div className="text-muted-foreground space-y-0.5">
                   <p>
-                    <a href="tel:+494403583070" className="hover:text-primary transition-colors">
+                    <a href="tel:+49440358307" className="hover:text-primary transition-colors">
                       04403 58307
                     </a>
                   </p>
                   <p>
-                    <a href="tel:+4901714492282" className="hover:text-primary transition-colors">
+                    <a href="tel:+491714492282" className="hover:text-primary transition-colors">
                       0171 4492282 (Mobil)
                     </a>
                   </p>
