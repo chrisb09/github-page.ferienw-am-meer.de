@@ -37,7 +37,7 @@ const galleryImages = [
   },
   {
     "src": "/images/gallery/image-08.webp",
-    "alt": "Rote Nordlichter leuchten hinter Bäumen, die sich im stillen Wasser spiegeln"
+    "alt": "Rote Nordlichter leuchten hinter Bäumen am Ufer"
   },
   {
     "src": "/images/gallery/image-09.webp",
@@ -53,39 +53,39 @@ const galleryImages = [
   },
   {
     "src": "/images/gallery/image-12.webp",
-    "alt": "Spektakuläre Polarlichter über dem See, von einer Parkbank aus betrachtet"
+    "alt": "Abendstimmung mit pinken Wolken über dem Yachthafen Bünting"
   },
   {
     "src": "/images/gallery/image-13.webp",
-    "alt": "Grüne und rote Nordlichter erhellen den Nachthimmel über dem Seeufer"
+    "alt": "Sanfter Sonnenuntergang mit farbigen Wolken über dem See und Hafen"
   },
   {
     "src": "/images/gallery/image-14.webp",
-    "alt": "Magische Spiegelung der Bäume im Wasser unter leuchtenden Polarlichtern"
+    "alt": "Intensiv pink leuchtende Wolken bei Sonnenuntergang über dem Yachthafen Bünting"
   },
   {
     "src": "/images/gallery/image-15.webp",
-    "alt": "Wunderschöner Sonnenuntergang am Yachthafen Bünting"
+    "alt": "Die hell erleuchtete Wohnanlage am zugefrorenen Hafen bei Nacht"
   },
   {
     "src": "/images/gallery/image-16.webp",
-    "alt": "Pink leuchtende Polarlichter über den Booten im Yachthafen Bünting"
+    "alt": "Goldener Sonnenuntergang über dem ruhigen See mit Holzsteg"
   },
   {
     "src": "/images/gallery/image-17.webp",
-    "alt": "Nordlichter färben den Himmel über dem Yachthafen Bünting in kräftiges Pink"
-  },
-  {
-    "src": "/images/gallery/image-18.webp",
     "alt": "Tief verschneiter, zugefrorener Wasserlauf gesäumt von Winterbäumen"
   },
   {
-    "src": "/images/gallery/image-19.webp",
+    "src": "/images/gallery/image-18.webp",
     "alt": "Glaskugel-Fotografie: Die winterliche Wohnanlage steht in der Kugel Kopf"
   },
   {
+    "src": "/images/gallery/image-19.webp",
+    "alt": "Glaskugel-Fotografie: Detailaufnahme eines schneebedeckten Baumstumpfes"
+  },
+  {
     "src": "/images/gallery/image-20.webp",
-    "alt": "Glaskugel-Fotografie: Ein vereister Baumstumpf im Schnee"
+    "alt": "Glaskugel-Fotografie: Der verschneite Anleger im Fokus der Kugel"
   },
   {
     "src": "/images/gallery/image-21.webp",
@@ -93,11 +93,11 @@ const galleryImages = [
   },
   {
     "src": "/images/gallery/image-22.webp",
-    "alt": "Goldener Sonnenuntergang über dem teilweise zugefrorenen See mit Holzsteg"
+    "alt": "Ruhige Abendstimmung über dem teilweise zugefrorenen See"
   },
   {
     "src": "/images/gallery/image-23.webp",
-    "alt": "Die hell erleuchtete Wohnanlage am zugefrorenen Hafen bei Nacht"
+    "alt": "Verschneite Slippanlage im Hafen unter dem nächtlichen Winterhimmel"
   },
   {
     "src": "/images/gallery/image-24.webp",
@@ -121,55 +121,55 @@ const galleryImages = [
   },
   {
     "src": "/images/gallery/image-29.webp",
-    "alt": "Glaskugel-Fotografie: Detailaufnahme eines schneebedeckten Baumstumpfes"
-  },
-  {
-    "src": "/images/gallery/image-30.webp",
     "alt": "Wunderschöne Wolkenformationen spiegeln sich im ruhigen Wasser des Sees"
   },
   {
-    "src": "/images/gallery/image-31.webp",
-    "alt": "Goldene Abendsonne scheint durch die großen, kahlen Bäume am Sandstrand"
-  },
-  {
-    "src": "/images/gallery/image-32.webp",
+    "src": "/images/gallery/image-30.webp",
     "alt": "Weiter Blick über den See auf den fernen Yachthafen Bünting unter blauem Himmel"
   },
   {
+    "src": "/images/gallery/image-31.webp",
+    "alt": "Goldene Abendsonne scheint durch die großen, kahlen Bäume am Strand"
+  },
+  {
+    "src": "/images/gallery/image-32.webp",
+    "alt": "Blick durch das Schilf auf das weite Wasser"
+  },
+  {
     "src": "/images/gallery/image-33.webp",
-    "alt": "Idyllische Landschaft am Zwischenahner Meer mit Yachthafen Bünting im Hintergrund"
+    "alt": "Spiegelung der Wolken im ruhigen Wasserweg"
   },
   {
     "src": "/images/gallery/image-34.webp",
-    "alt": "Romantischer Sonnenuntergang mit pinken Wolken über dem zugefrorenen See"
-  },
-  {
-    "src": "/images/gallery/image-35.webp",
-    "alt": "Intensives Abendrot spiegelt sich auf der eisigen Fläche des Meeres"
-  },
-  {
-    "src": "/images/gallery/image-36.webp",
-    "alt": "Die untergehende Sonne taucht den gefrorenen See in ein warmes Licht"
-  },
-  {
-    "src": "/images/gallery/image-37.webp",
-    "alt": "Glaskugel-Fotografie: Die erleuchtete Wohnanlage bei Nacht in der Kugel gefangen"
-  },
-  {
-    "src": "/images/gallery/image-38.webp",
-    "alt": "Glaskugel-Fotografie: Nächtlicher Blick auf die Architektur der Anlage"
-  },
-  {
-    "src": "/images/gallery/image-39.webp",
-    "alt": "Glaskugel-Fotografie: Die Lichter der Wohnanlage spiegeln sich in der Kristallkugel"
-  },
-  {
-    "src": "/images/gallery/image-40.webp",
     "alt": "Verschneiter Steg in den See bei Nacht mit Sperrschildern für die Winterzeit"
   },
   {
+    "src": "/images/gallery/image-35.webp",
+    "alt": "Glaskugel-Fotografie: Nächtlicher Blick auf die Architektur der Anlage"
+  },
+  {
+    "src": "/images/gallery/image-36.webp",
+    "alt": "Glaskugel-Fotografie: Die erleuchtete Wohnanlage bei Nacht in der Kugel gefangen"
+  },
+  {
+    "src": "/images/gallery/image-37.webp",
+    "alt": "Die Sonne taucht den gefrorenen See in ein warmes Licht"
+  },
+  {
+    "src": "/images/gallery/image-38.webp",
+    "alt": "Romantischer Sonnenuntergang mit pinken Wolken über dem zugefrorenen See"
+  },
+  {
+    "src": "/images/gallery/image-39.webp",
+    "alt": "Intensives Abendrot spiegelt sich auf der eisigen Fläche des Meeres"
+  },
+  {
+    "src": "/images/gallery/image-40.webp",
+    "alt": "Leuchtender Sonnenuntergang hinter dem winterlichen Schilfgürtel"
+  },
+  {
     "src": "/images/gallery/image-41.webp",
-    "alt": "Nächtliche Winterstimmung am gesperrten Holzsteg auf dem Zwischenahner Meer"
+    "alt": "Sanfter Sonnenuntergang über der weiten, vereisten Wasserfläche"
   },
   {
     "src": "/images/gallery/image-42.webp",
