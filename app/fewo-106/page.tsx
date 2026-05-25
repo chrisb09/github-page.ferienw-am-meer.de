@@ -20,7 +20,7 @@ export default function Fewo106Page() {
     <ApartmentPageClient
       apartment={106}
       title="Wohnung 106"
-      subtitle="Nichtraucher · Allergiefreundlich · 70 qm · 4. Etage mit Fahrstuhl"
+      subtitle="Nichtraucher · Allergikerfreundliche · 70 qm · 4. Etage mit Fahrstuhl"
       floorPlanSrc="/images/106/grundriss.webp"
       floorPlanAlt="Grundriss Wohnung 106"
       rooms={rooms}

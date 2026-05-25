@@ -140,7 +140,7 @@ export default function WillkommenPage() {
                     <h3 className="font-serif text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
                       {apt.name}
                     </h3>
-                    <p className="text-sm text-accent font-medium mt-0.5">Nichtraucher &middot; Allergiefreundlich</p>
+                    <p className="text-sm text-accent font-medium mt-0.5">Nichtraucher &middot; Allergikerfreundliche</p>
                   </div>
                   <span className="text-sm text-muted-foreground font-mono">{apt.size}</span>
                 </div>

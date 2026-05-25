@@ -4,7 +4,7 @@ import { ApartmentPageClient } from "@/components/apartment-page-client";
 export const metadata: Metadata = {
   title: "Ferienwohnung 105 – Am Meer Bad Zwischenahn",
   description:
-    "50 qm Ferienwohnung 105 mit überdachtem Balkon, direkt am Zwischenahner Meer. Nichtraucher, allergiefreundlich.",
+    "50 qm Ferienwohnung 105 mit überdachtem Balkon, direkt am Zwischenahner Meer. Nichtraucher, allergikerfreundliche.",
 };
 
 const rooms = [
@@ -20,7 +20,7 @@ export default function Fewo105Page() {
     <ApartmentPageClient
       apartment={105}
       title="Wohnung 105"
-      subtitle="Nichtraucher · Allergiefreundlich · 50 qm · 4. Etage mit Fahrstuhl"
+      subtitle="Nichtraucher · Allergikerfreundliche · 50 qm · 4. Etage mit Fahrstuhl"
       floorPlanSrc="/images/105/grundriss.svg"
       floorPlanAlt="Grundriss Ferienwohnung 105"
       rooms={rooms}
