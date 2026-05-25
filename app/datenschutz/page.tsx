@@ -62,6 +62,22 @@ export default function DatenschutzPage() {
             Wir verwenden auf dieser Website keine Analyse-Tools (wie Google Analytics) und keine Tracking-Cookies.
           </p>
         </div>
+
+        <div>
+          <h2 className="font-medium text-foreground mb-2 text-base">6. Google Maps</h2>
+          <p>
+            Diese Seite nutzt den Kartendienst Google Maps. Anbieter ist die Google Ireland Limited („Google“), Gordon House, Barrow Street, Dublin 4, Irland.
+          </p>
+          <p className="mt-2">
+            Um den Datenschutz auf unserer Website zu gewährleisten, ist Google Maps deaktiviert, wenn Sie unsere Website das erste Mal betreten. Eine direkte Verbindung zu den Servern von Google wird erst aufgebaut, wenn Sie Google Maps selbstständig aktivieren (Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO). Auf diese Weise wird verhindert, dass Ihre Daten schon beim ersten Betreten der Seite an Google übertragen werden.
+          </p>
+          <p className="mt-2">
+            Nach der Aktivierung wird Google Maps Ihre IP-Adresse speichern. Diese wird in der Regel an einen Server von Google in den USA übertragen und dort gespeichert. Wir haben nach der Aktivierung der Karte keinen Einfluss auf diese Datenübertragung.
+          </p>
+          <p className="mt-2">
+            Mehr Informationen zum Umgang mit Nutzerdaten finden Sie in der Datenschutzerklärung von Google: <a href="https://policies.google.com/privacy?hl=de" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">https://policies.google.com/privacy?hl=de</a>.
+          </p>
+        </div>
       </div>
     </section>
   );

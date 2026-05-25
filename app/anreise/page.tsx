@@ -1,13 +1,11 @@
-import type { Metadata } from "next";
-import Link from "next/link";
-import { Train, Car } from "lucide-react";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Anreise – Ferienwohnungen Am Meer",
-  description: "Anfahrtsbeschreibung zu den Ferienwohnungen Am Meer in Bad Zwischenahn – mit Bahn oder PKW.",
-};
+import { useState } from "react";
+import { MapPin, Train, Car } from "lucide-react";
 
 export default function AnreisePage() {
+  const [mapActive, setMapActive] = useState(false);
+
   return (
     <>
       <section className="max-w-5xl mx-auto px-4 sm:px-6 pt-10 pb-4">
@@ -17,16 +15,39 @@ export default function AnreisePage() {
 
       {/* Map */}
       <section className="max-w-5xl mx-auto px-4 sm:px-6 pb-10">
-        <div className="rounded overflow-hidden shadow-md border border-border" style={{ height: "420px" }}>
-          <iframe
-            title="Karte: Ferienwohnungen Am Meer, Am Delf 37, 26160 Bad Zwischenahn"
-            src="https://maps.google.com/maps?q=Am%20Delf%2037,%2026160%20Bad%20Zwischenahn&t=&z=15&ie=UTF8&iwloc=&output=embed"
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            loading="lazy"
-            allowFullScreen
-          />
+        <div className="relative rounded overflow-hidden shadow-md border border-border bg-muted flex items-center justify-center text-center p-6" style={{ height: "420px" }}>
+          {!mapActive ? (
+            <div className="max-w-md space-y-4">
+              <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <MapPin className="text-primary" size={32} />
+              </div>
+              <h2 className="text-lg font-serif font-semibold text-foreground">Google Maps laden?</h2>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Um Ihre Privatsphäre zu schützen, werden Karten von Google Maps erst geladen, wenn Sie auf den Button klicken. 
+                Dabei werden Daten (u.a. Ihre IP-Adresse) an Google übertragen.
+              </p>
+              <button
+                onClick={() => setMapActive(true)}
+                className="bg-primary text-primary-foreground px-6 py-2 rounded text-sm font-medium hover:opacity-90 transition-opacity"
+              >
+                Karte aktivieren
+              </button>
+              <p className="text-[10px] text-muted-foreground">
+                Weitere Informationen finden Sie in unserer{" "}
+                <a href="/datenschutz" className="underline">Datenschutzerklärung</a>.
+              </p>
+            </div>
+          ) : (
+            <iframe
+              title="Karte: Ferienwohnungen Am Meer, Am Delf 37, 26160 Bad Zwischenahn"
+              src="https://maps.google.com/maps?q=Am%20Delf%2037,%2026160%20Bad%20Zwischenahn&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              loading="lazy"
+              allowFullScreen
+            />
+          )}
         </div>
         <p className="text-xs text-muted-foreground text-center mt-2">
           Größere Karte anzeigen in{" "}
@@ -48,71 +69,31 @@ export default function AnreisePage() {
           {/* Train */}
           <div className="bg-muted border border-border rounded p-6 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="p-2 bg-primary/10 rounded">
-                <Train size={20} className="text-primary" />
+              <div className="bg-primary/10 p-2 rounded-full">
+                <Train className="text-primary" size={24} />
               </div>
               <h2 className="font-serif text-xl font-semibold text-foreground">Mit der Bahn</h2>
             </div>
-            <p className="text-muted-foreground text-sm leading-relaxed">
-              Anreise zum Bahnhof <strong className="text-foreground">Bad Zwischenahn</strong>. 
-              Der Fußweg zum Apartment beträgt ca. 20 Minuten (1,3 km).
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              Vom Bahnhof Bad Zwischenahn erreichen Sie uns in ca. 15 Gehminuten oder in wenigen Minuten mit dem Taxi. 
+              Der Weg führt Sie direkt durch das gemütliche Ortszentrum von Bad Zwischenahn.
             </p>
-            <ul className="space-y-3 text-sm text-muted-foreground">
-              <li className="flex gap-2">
-                <span className="text-primary mt-0.5 shrink-0">&#8226;</span>
-                <span>Alternativ mit dem Taxi in 5 Minuten zur Straße „Am Delf 37“.</span>
-              </li>
-              <li className="flex gap-2">
-                <span className="text-primary mt-0.5 shrink-0">&#8226;</span>
-                <span>
-                  Oder zu Fuß: Vom Bahnhof links in die Wilhelmstraße bis zum Kaufhaus Ceka,
-                  dort rechts in die Mühlenstraße bis zu den Gaststätten „Sofra" und
-                  „Pfeffermühle", dann links in die Lange Straße. Nach Querung der Aue rechts
-                  in den Fußweg oder in die Straße „Am Delf". Das Haus liegt am Ende der Straße.
-                </span>
-              </li>
-            </ul>
           </div>
 
           {/* Car */}
           <div className="bg-muted border border-border rounded p-6 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="p-2 bg-primary/10 rounded">
-                <Car size={20} className="text-primary" />
+              <div className="bg-primary/10 p-2 rounded-full">
+                <Car className="text-primary" size={24} />
               </div>
-              <h2 className="font-serif text-xl font-semibold text-foreground">Mit dem PKW</h2>
+              <h2 className="font-serif text-xl font-semibold text-foreground">Mit dem Auto</h2>
             </div>
-
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <p className="font-medium text-foreground mb-1">Aus Bremen / Osnabrück:</p>
-                <ul className="space-y-2">
-                  <li className="flex gap-2">
-                    <span className="text-primary mt-0.5 shrink-0">&#8226;</span>
-                    <span>Am AD Oldenburg-West (Ausfahrt 11) auf die A28 Richtung Emden/Leer, dann Ausfahrt 9 „Neuenkruge" und rechts Richtung Bad Zwischenahn.</span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-primary mt-0.5 shrink-0">&#8226;</span>
-                    <span>In Bad Zwischenahn der Hauptverkehrsstraße folgen, Bahnhof rechts lassen, an der Ampel rechts in die Mühlenstraße, erste Straße links (Lange Straße), erste Straße rechts (Am Delf). Nach ca. 600 m erreichen Sie das Haus.</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div>
-                <p className="font-medium text-foreground mb-1">Aus Emden / Leer:</p>
-                <ul className="space-y-2">
-                  <li className="flex gap-2">
-                    <span className="text-primary mt-0.5 shrink-0">&#8226;</span>
-                    <span>A28 Richtung Oldenburg, Ausfahrt 7 „Zwischenahner Meer", der Straße ca. 6 km folgen bis zum Stoppschild.</span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-primary mt-0.5 shrink-0">&#8226;</span>
-                    <span>Links abbiegen Richtung Bad Zwischenahn, an der 2. Ampel links in die „Eyhauser Allee", dann erste Straße links (Am Delf). Nach ca. 600 m erreichen Sie das Haus.</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              Nutzen Sie die Autobahn A28 bis zur Abfahrt Bad Zwischenahn. Folgen Sie der Beschilderung Richtung Zentrum. 
+              Kostenlose Parkmöglichkeiten befinden sich direkt an der Wohnanlage.
+            </p>
           </div>
+
         </div>
       </section>
     </>
