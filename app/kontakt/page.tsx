@@ -25,18 +25,36 @@ export default function KontaktPage() {
           {/* Pricing Column */}
           <div className="lg:col-span-2 space-y-8">
             
-            {/* Price Info Card */}
+            {/* Price Table Card */}
             <div className="bg-background border border-border rounded-lg shadow-sm overflow-hidden">
               <div className="bg-muted px-6 py-4 border-b border-border flex items-center gap-2">
                 <Calendar className="text-primary" size={20} />
-                <h2 className="font-serif text-xl font-semibold text-foreground">Preise &amp; Mietzeitraum</h2>
+                <h2 className="font-serif text-xl font-semibold text-foreground">Übernachtungspreise</h2>
               </div>
-              <div className="p-6 space-y-4">
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  Der Preis pro Übernachtung beträgt je nach Saison und Wohnungsgröße zwischen 
-                  <span className="text-foreground font-semibold"> 45,00 &euro; und 110,00 &euro;</span>.
-                </p>
-                <div className="bg-muted/30 p-4 rounded-md border border-border/50">
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm text-left border-collapse">
+                  <thead>
+                    <tr className="bg-muted/30 text-muted-foreground font-medium border-b border-border">
+                      <th className="px-6 py-3">Saison</th>
+                      <th className="px-6 py-3 text-right">Fewo 105</th>
+                      <th className="px-6 py-3 text-right">Fewo 106</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y border-border text-foreground">
+                    <tr>
+                      <td className="px-6 py-4 font-medium">Hauptsaison</td>
+                      <td className="px-6 py-4 text-right">74,00 &euro;</td>
+                      <td className="px-6 py-4 text-right">84,00 &euro;</td>
+                    </tr>
+                    <tr>
+                      <td className="px-6 py-4 font-medium">Nebensaison</td>
+                      <td className="px-6 py-4 text-right italic text-muted-foreground" colSpan={2}>Preise auf Anfrage</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div className="p-6 bg-muted/10 border-t border-border/50">
+                <div className="bg-background p-4 rounded-md border border-border/50">
                   <p className="text-sm text-foreground font-medium flex items-center gap-2">
                     <CheckCircle2 className="text-primary" size={16} />
                     Mietzeitraum: Samstag bis Samstag oder nach Absprache
@@ -66,7 +84,7 @@ export default function KontaktPage() {
               <div className="bg-background border border-border rounded-lg p-6 shadow-sm">
                 <h3 className="font-serif text-lg font-semibold text-foreground mb-4">Hinweise</h3>
                 <ul className="space-y-3">
-                  <li className="flex gap-3 text-sm text-muted-foreground font-medium text-accent">
+                  <li className="flex gap-3 text-sm font-medium text-accent">
                     <Ban className="shrink-0" size={18} />
                     <span>Die Wohnungen sind allergiefreundlich, daher keine Vermietung an Gäste mit Hunden.</span>
                   </li>
@@ -84,7 +102,7 @@ export default function KontaktPage() {
               <div>
                 <p className="text-sm text-foreground font-medium">Verfügbarkeit &amp; Online-Buchung</p>
                 <p className="text-sm text-muted-foreground leading-relaxed mt-1">
-                  Die tagesaktuellen Preise und die Verfügbarkeit finden Sie auf der offiziellen Buchungsseite der{" "}
+                  Die tagesaktuellen Preise und die Verfügbarkeit finden Sie auch auf der offiziellen Buchungsseite der{" "}
                   <a
                     href="https://www.bad-zwischenahn-touristik.de/hotel/ferienwohnung-am-meer"
                     target="_blank"
