@@ -134,11 +134,16 @@ export default function KontaktPage() {
                   </li>
                   <li className="flex gap-3 text-sm text-muted-foreground">
                     <CheckCircle2 className="text-primary shrink-0" size={18} />
-                    <span>Nicht enthalten: Kurtaxe (Zahlung vor Ort)</span>
+                    <span>Nicht enthalten: Kurtaxe</span>
                   </li>
                 </ul>
               </div>
             </div>
+
+            <p className="text-[11px] text-muted-foreground italic px-2">
+              Gemäß Preisangabenverordnung (PAngV) handelt es sich bei den genannten Preisen um Endpreise, 
+              da die Kosten für Endreinigung, Bettwäsche und Handtücher bereits enthalten sind.
+            </p>
 
             {/* External Info */}
             <div className="p-5 rounded-lg border border-primary/20 bg-primary/5 flex items-start gap-4">
