@@ -9,23 +9,23 @@ export const metadata: Metadata = {
 const galleryImages = [
   {
     "src": "/images/gallery/image-01.webp",
-    "alt": "Wohnanlage Am Delf vom Wasser aus gesehen, mit Booten im Yachthafen Bünting"
+    "alt": "Wohnanlage Am Delf vom Wasser aus gesehen, mit Booten im anliegenden Hafen"
   },
   {
     "src": "/images/gallery/image-02.webp",
-    "alt": "Segelboote im Yachthafen Bünting vor der Wohnanlage"
+    "alt": "Segelboote im Hafen direkt vor der Wohnanlage"
   },
   {
     "src": "/images/gallery/image-03.webp",
-    "alt": "Yachthafen Bünting mit Segelbooten unter bewölktem Himmel"
+    "alt": "Hafen an der Wohnanlage mit Segelbooten unter bewölktem Himmel"
   },
   {
     "src": "/images/gallery/image-04.webp",
-    "alt": "Blick aus dem Yachthafen Bünting auf die Wohnanlage"
+    "alt": "Blick aus dem Hafen auf die Wohnanlage"
   },
   {
     "src": "/images/gallery/image-05.webp",
-    "alt": "Holzsteg führt in den See unter leuchtend grünen Polarlichtern"
+    "alt": "Der Steg in Eyhausen führt in den See unter leuchtend grünen Polarlichtern"
   },
   {
     "src": "/images/gallery/image-06.webp",
@@ -53,7 +53,7 @@ const galleryImages = [
   },
   {
     "src": "/images/gallery/image-12.webp",
-    "alt": "Abendstimmung mit pinken Wolken über dem Yachthafen Bünting"
+    "alt": "Abendstimmung mit pinken Wolken über dem See und der Hafenanlage"
   },
   {
     "src": "/images/gallery/image-13.webp",
@@ -61,11 +61,11 @@ const galleryImages = [
   },
   {
     "src": "/images/gallery/image-14.webp",
-    "alt": "Intensiv pink leuchtende Wolken bei Sonnenuntergang über dem Yachthafen Bünting"
+    "alt": "Intensiv pink leuchtende Wolken bei Sonnenuntergang über dem Hafen"
   },
   {
     "src": "/images/gallery/image-15.webp",
-    "alt": "Die hell erleuchtete Wohnanlage am zugefrorenen Hafen bei Nacht"
+    "alt": "Die hell erleuchtete Wohnanlage an der winterlichen Seeseite bei Nacht (zugefroren)"
   },
   {
     "src": "/images/gallery/image-16.webp",
@@ -97,7 +97,7 @@ const galleryImages = [
   },
   {
     "src": "/images/gallery/image-23.webp",
-    "alt": "Verschneite Slippanlage im Hafen unter dem nächtlichen Winterhimmel"
+    "alt": "Der teilweise abgebaute Hafen im Winter (ohne Holzstege) unter nächtlichem Himmel"
   },
   {
     "src": "/images/gallery/image-24.webp",
@@ -141,7 +141,7 @@ const galleryImages = [
   },
   {
     "src": "/images/gallery/image-34.webp",
-    "alt": "Verschneiter Steg in den See bei Nacht mit Sperrschildern für die Winterzeit"
+    "alt": "Verschneiter Steg (Eyhausen) in den See bei Nacht mit Sperrschildern"
   },
   {
     "src": "/images/gallery/image-35.webp",
@@ -169,7 +169,7 @@ const galleryImages = [
   },
   {
     "src": "/images/gallery/image-41.webp",
-    "alt": "Sanfter Sonnenuntergang über der weiten, vereisten Wasserfläche"
+    "alt": "Nächtliche Winterstimmung am gesperrten Holzsteg in Eyhausen"
   },
   {
     "src": "/images/gallery/image-42.webp",
@@ -185,11 +185,11 @@ const galleryImages = [
   },
   {
     "src": "/images/gallery/image-45.webp",
-    "alt": "Blick vom Steg über das Wasser in Richtung Yachthafen Bünting"
+    "alt": "Blick vom Steg in Eyhausen über das Wasser, rechts im Bild der Yachthafen Bünting"
   },
   {
     "src": "/images/gallery/image-46.webp",
-    "alt": "Luftaufnahme: Die gesamte Wohnanlage Am Delf und der Yachthafen aus der Vogelperspektive"
+    "alt": "Luftaufnahme: Die gesamte Wohnanlage Am Delf und die Bootsliegeplätze aus der Vogelperspektive"
   }
 ];
 
