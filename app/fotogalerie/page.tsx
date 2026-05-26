@@ -190,6 +190,18 @@ const galleryImages = [
   {
     "src": "/images/gallery/image-46.webp",
     "alt": "Luftaufnahme: Die gesamte Wohnanlage Am Delf und die Bootsliegeplätze aus der Vogelperspektive"
+  },
+  {
+    "src": "/images/gallery/image-47.webp",
+    "alt": "Impression vom Zwischenahner Meer"
+  },
+  {
+    "src": "/images/gallery/image-48.webp",
+    "alt": "Impression vom Zwischenahner Meer"
+  },
+  {
+    "src": "/images/gallery/image-49.webp",
+    "alt": "Impression vom Zwischenahner Meer"
   }
 ];
 
