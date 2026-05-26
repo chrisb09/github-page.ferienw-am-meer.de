@@ -1,6 +1,11 @@
+import { Metadata } from "next";
 import Link from "next/link";
 import { Waves, MapPin, Bike, Sailboat } from "lucide-react";
 import { ProgressiveImage } from "@/components/progressive-image";
+
+export const metadata: Metadata = {
+  description: "Direkt am Zwischenahner Meer: Zwei komfortable Ferienwohnungen (105 & 106) in Bad Zwischenahn. Seesicht, allergikerfreundlich, zentrale Lage am Wanderweg und Hafen.",
+};
 
 export default function WillkommenPage() {
   return (
@@ -117,7 +122,7 @@ export default function WillkommenPage() {
       <section className="bg-muted border-t border-border">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-16">
           <h2 className="font-serif text-2xl font-semibold text-foreground mb-8 text-center">
-            Die Wohnungen
+            Unsere Ferienwohnungen
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
             {[

@@ -17,10 +17,11 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "Ferienwohnungen Am Meer – Bad Zwischenahn",
   description:
-    "Zwei komfortable Ferienwohnungen direkt am Zwischenahner Meer in Bad Zwischenahn. Seesicht, allergikerfreundlich.",
-  keywords: "Ferienwohnung, Bad Zwischenahn, Zwischenahner Meer, Urlaub, Nordsee",
+    "Direkt am Zwischenahner Meer: Zwei komfortable Ferienwohnungen (105 & 106) in Bad Zwischenahn. Seesicht, allergikerfreundlich, zentrale Lage am Wanderweg und Hafen. Ideal für Ihren Urlaub am Wasser.",
+  keywords: "Ferienwohnung, Bad Zwischenahn, Zwischenahner Meer, Urlaub, Am Meer, Ferienhaus",
   icons: {
     icon: [
+      { url: "/favicon-48x48.png", sizes: "48x48", type: "image/png" },
       { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
     ],
     shortcut: "/favicon.ico",
