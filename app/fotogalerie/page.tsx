@@ -193,15 +193,15 @@ const galleryImages = [
   },
   {
     "src": "/images/gallery/image-47.webp",
-    "alt": "Impression vom Zwischenahner Meer"
+    "alt": "Blick auf den Hafen von Eyhausen direkt neben der Wohnanlage"
   },
   {
     "src": "/images/gallery/image-48.webp",
-    "alt": "Impression vom Zwischenahner Meer"
+    "alt": "Blick durch das Schilf am Ufer auf das Zwischenahner Meer"
   },
   {
     "src": "/images/gallery/image-49.webp",
-    "alt": "Impression vom Zwischenahner Meer"
+    "alt": "Sonnenlicht über dem See, gesehen durch das Schilf am Ufer"
   }
 ];
 
